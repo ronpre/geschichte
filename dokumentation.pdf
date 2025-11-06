@@ -9,7 +9,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
 endobj
 4 0 obj
-<< /Length 707 >>
+<< /Length 754 >>
 stream
 BT
 /F1 12 Tf
@@ -20,23 +20,25 @@ BT
 0 -30 Td
 (Anpassungen:) Tj
 0 -18 Td
-(1. HTML-Datei enthaelt nun fuenf historische Sektionen:) Tj
+(1. index.html erstellt als Einstieg fuer GitHub Pages und verweist) Tj
 0 -18 Td
-(   Politik, Wirtschaft, Zeitgeschichte, Gesellschaft, Antike.) Tj
+(   inhaltlich auf tageschronik.html.) Tj
 0 -18 Td
-(2. Neue Themen: Franzoesische Revolution 1789 und Pax) Tj
+(2. HTML enthaelt fuenf historische Sektionen zu Politik,) Tj
 0 -18 Td
-(   Romana 27 v. Chr., jeweils mit Ereignis, Folgen,) Tj
+(   Wirtschaft, Zeitgeschichte, Gesellschaft und Antike.) Tj
 0 -18 Td
-(   Erkenntnissen und Vertiefung.) Tj
+(3. update-Hinweis im Header lautet "update: 6.11.25".) Tj
 0 -18 Td
-(3. Update-Hinweis im Header wurde auf "update: 6.11.25" gekuerzt.) Tj
+(4. Titel der Seite lautet "neuere geschichte".) Tj
 0 -18 Td
-(4. Titel der Seite lautet nun "neuere geschichte" in Kleinbuchstaben.) Tj
+(5. Quellen als Fussnoten mit Rueckverweis umgesetzt.) Tj
 0 -30 Td
 (Status:) Tj
 0 -18 Td
-(HTML und PDF spiegeln den Stand vom 6. November 2025 wider.) Tj
+(HTML-Dateien index.html und tageschronik.html sowie die) Tj
+0 -18 Td
+(PDF-Dokumentation spiegeln den Stand vom 6. November 2025.) Tj
 ET
 endstream
 endobj
@@ -50,9 +52,9 @@ xref
 0000000058 00000 n 
 0000000115 00000 n 
 0000000241 00000 n 
-0000000998 00000 n 
+0000001045 00000 n 
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-1068
+1115
 %%EOF
