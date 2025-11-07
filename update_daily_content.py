@@ -1,27 +1,60 @@
-<!DOCTYPE html>
+from __future__ import annotations
+
+from datetime import datetime
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+MONTHS = {
+    1: "Januar",
+    2: "Februar",
+    3: "Maerz",
+    4: "April",
+    5: "Mai",
+    6: "Juni",
+    7: "Juli",
+    8: "August",
+    9: "September",
+    10: "Oktober",
+    11: "November",
+    12: "Dezember",
+}
+
+UPDATE_TIME = "09:00"
+
+
+def german_long_date(dt: datetime) -> str:
+    return f"{dt.day}. {MONTHS[dt.month]} {dt.year}"
+
+
+def german_short_date(dt: datetime) -> str:
+    return f"{dt.day}.{dt.month:02d}.{str(dt.year)[-2:]}"
+
+
+def build_html(date_long: str, date_short: str) -> str:
+    return f"""<!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>neuere geschichte &ndash; 7. November 2025</title>
+<title>neuere geschichte &ndash; {date_long}</title>
 <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2rem auto; max-width: 900px; padding: 0 1rem; }
-    header, footer { border-bottom: 1px solid #ccc; padding-bottom: 1rem; margin-bottom: 1.5rem; }
-    footer { border-top: 1px solid #ccc; border-bottom: none; margin-top: 2rem; padding-top: 1.5rem; }
-    h1, h2, h3 { color: #1a1a1a; }
-    section { margin-bottom: 2rem; }
-    .meta { color: #555; font-size: 0.95rem; }
-    .artikel { border-left: 4px solid #1a1a1a; padding-left: 1rem; background: #fafafa; }
-    .artikel p { margin: 0.4rem 0; }
-    .footnotes { font-size: 0.9rem; }
-    .footnotes li { margin-bottom: 0.5rem; }
+    body {{ font-family: Arial, sans-serif; line-height: 1.6; margin: 2rem auto; max-width: 900px; padding: 0 1rem; }}
+    header, footer {{ border-bottom: 1px solid #ccc; padding-bottom: 1rem; margin-bottom: 1.5rem; }}
+    footer {{ border-top: 1px solid #ccc; border-bottom: none; margin-top: 2rem; padding-top: 1.5rem; }}
+    h1, h2, h3 {{ color: #1a1a1a; }}
+    section {{ margin-bottom: 2rem; }}
+    .meta {{ color: #555; font-size: 0.95rem; }}
+    .artikel {{ border-left: 4px solid #1a1a1a; padding-left: 1rem; background: #fafafa; }}
+    .artikel p {{ margin: 0.4rem 0; }}
+    .footnotes {{ font-size: 0.9rem; }}
+    .footnotes li {{ margin-bottom: 0.5rem; }}
 </style>
 </head>
 <body>
 <header>
 <h1>neuere geschichte</h1>
-<p class="meta">update: 7.11.25 09:00</p>
-<p class="meta">t&auml;gliche aktualisierung um 09:00 uhr</p>
+<p class="meta">update: {date_short} {UPDATE_TIME}</p>
+<p class="meta">t&auml;gliche aktualisierung um {UPDATE_TIME} uhr</p>
 </header>
 <main>
 <section class="artikel" aria-labelledby="politik-1990">
@@ -74,3 +107,83 @@
 </footer>
 </body>
 </html>
+"""
+
+
+def build_pdf_content(date_long: str, date_short: str) -> bytes:
+    lines = [
+        "BT",
+        "/F1 12 Tf",
+        "72 760 Td",
+        "(Dokumentation neuere geschichte) Tj",
+        "0 -18 Td",
+        f"(update: {date_short} {UPDATE_TIME}) Tj",
+        "0 -30 Td",
+        "(Automatisierung:) Tj",
+        "0 -18 Td",
+        "(1. index.html dient als Einstieg fuer GitHub Pages und stimmt) Tj",
+        "0 -18 Td",
+        "(   inhaltlich mit tageschronik.html ueberein.) Tj",
+        "0 -18 Td",
+        "(2. Beide HTML-Dateien enthalten fuenf Ressorts zu Politik,) Tj",
+        "0 -18 Td",
+        "(   Wirtschaft, Zeitgeschichte, Gesellschaft und Antike.) Tj",
+        "0 -18 Td",
+        "(3. Header weist auf taegliche Aktualisierung um 09:00 Uhr hin.) Tj",
+        "0 -18 Td",
+        f"(4. Titel aktualisiert auf {date_long}.) Tj",
+        "0 -18 Td",
+        "(5. Quellen werden weiterhin als Fussnoten gepflegt.) Tj",
+        "0 -30 Td",
+        "(Status:) Tj",
+        "0 -18 Td",
+        "(Dieses PDF dokumentiert den Stand der HTML-Dateien am) Tj",
+        "0 -18 Td",
+        f"({date_long}.) Tj",
+        "ET",
+    ]
+    stream = ("\n".join(lines) + "\n").encode("ascii")
+    objs = []
+    objs.append(b"1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n")
+    objs.append(b"2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n")
+    objs.append(
+        b"3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>\nendobj\n"
+    )
+    objs.append(b"4 0 obj\n<< /Length %d >>\nstream\n" % len(stream) + stream + b"endstream\nendobj\n")
+    objs.append(b"5 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>\nendobj\n")
+
+    parts = [b"%PDF-1.4\n"]
+    offsets = [0]
+    length = len(parts[0])
+    for obj in objs:
+        offsets.append(length)
+        parts.append(obj)
+        length += len(obj)
+
+    xref_pos = length
+    xref = [b"xref\n", b"0 6\n", b"0000000000 65535 f \n"]
+    for offset in offsets[1:]:
+        xref.append(f"{offset:010d} 00000 n \n".encode("ascii"))
+    parts.append(b"".join(xref))
+    trailer = b"trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n" + str(xref_pos).encode("ascii") + b"\n%%EOF\n"
+    parts.append(trailer)
+    return b"".join(parts)
+
+
+def main() -> None:
+    now = datetime.now(ZoneInfo("Europe/Berlin"))
+    date_long = german_long_date(now)
+    date_short = german_short_date(now)
+
+    html_content = build_html(date_long, date_short)
+    base_path = Path(__file__).resolve().parent
+
+    for filename in ("index.html", "tageschronik.html"):
+        (base_path / filename).write_text(html_content, encoding="utf-8")
+
+    pdf_bytes = build_pdf_content(date_long, date_short)
+    (base_path / "dokumentation.pdf").write_bytes(pdf_bytes)
+
+
+if __name__ == "__main__":
+    main()

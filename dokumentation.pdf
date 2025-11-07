@@ -9,7 +9,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
 endobj
 4 0 obj
-<< /Length 738 >>
+<< /Length 732 >>
 stream
 BT
 /F1 12 Tf
@@ -18,27 +18,27 @@ BT
 0 -18 Td
 (update: 7.11.25 09:00) Tj
 0 -30 Td
-(Anpassungen:) Tj
+(Automatisierung:) Tj
 0 -18 Td
 (1. index.html dient als Einstieg fuer GitHub Pages und stimmt) Tj
 0 -18 Td
 (   inhaltlich mit tageschronik.html ueberein.) Tj
 0 -18 Td
-(2. Beide HTML-Dateien enthalten fuenf Ressorts: Politik,) Tj
+(2. Beide HTML-Dateien enthalten fuenf Ressorts zu Politik,) Tj
 0 -18 Td
 (   Wirtschaft, Zeitgeschichte, Gesellschaft und Antike.) Tj
 0 -18 Td
-(3. Header zeigt nun taegliche Aktualisierung um 09:00 Uhr.) Tj
+(3. Header weist auf taegliche Aktualisierung um 09:00 Uhr hin.) Tj
 0 -18 Td
 (4. Titel aktualisiert auf 7. November 2025.) Tj
 0 -18 Td
-(5. Fussnoten mit Quellen bleiben unveraendert erhalten.) Tj
+(5. Quellen werden weiterhin als Fussnoten gepflegt.) Tj
 0 -30 Td
 (Status:) Tj
 0 -18 Td
-(HTML-Dateien und diese Dokumentation spiegeln den Stand) Tj
+(Dieses PDF dokumentiert den Stand der HTML-Dateien am) Tj
 0 -18 Td
-(vom 7. November 2025 wider.) Tj
+(7. November 2025.) Tj
 ET
 endstream
 endobj
@@ -52,9 +52,9 @@ xref
 0000000058 00000 n 
 0000000115 00000 n 
 0000000241 00000 n 
-0000001029 00000 n 
+0000001023 00000 n 
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-1099
+1093
 %%EOF
