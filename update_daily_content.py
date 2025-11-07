@@ -53,8 +53,7 @@ def build_html(date_long: str, date_short: str) -> str:
 <body>
 <header>
 <h1>neuere geschichte</h1>
-<p class="meta">update: {date_short} {UPDATE_TIME} ohne Uhrzeit</p>
-<p class="meta">t&auml;gliche aktualisierung um {UPDATE_TIME} uhr</p>
+<p class="meta">update: {date_short}</p>
 </header>
 <main>
 <section class="artikel" aria-labelledby="politik-1990">
@@ -117,7 +116,7 @@ def build_pdf_content(date_long: str, date_short: str) -> bytes:
         "72 760 Td",
         "(Dokumentation neuere geschichte) Tj",
         "0 -18 Td",
-        f"(update: {date_short} {UPDATE_TIME}) Tj",
+    f"(update: {date_short}) Tj",
         "0 -30 Td",
         "(Automatisierung:) Tj",
         "0 -18 Td",
@@ -128,8 +127,8 @@ def build_pdf_content(date_long: str, date_short: str) -> bytes:
         "(2. Beide HTML-Dateien enthalten fuenf Ressorts zu Politik,) Tj",
         "0 -18 Td",
         "(   Wirtschaft, Zeitgeschichte, Gesellschaft und Antike.) Tj",
-        "0 -18 Td",
-        "(3. Header weist auf taegliche Aktualisierung um 09:00 Uhr hin.) Tj",
+    "0 -18 Td",
+    f"(3. GitHub Action aktualisiert Inhalte taeglich um {UPDATE_TIME} Uhr.) Tj",
         "0 -18 Td",
         f"(4. Titel aktualisiert auf {date_long}.) Tj",
         "0 -18 Td",
