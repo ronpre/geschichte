@@ -53,7 +53,7 @@ def build_html(date_long: str, date_short: str) -> str:
 <body>
 <header>
 <h1>neuere geschichte</h1>
-<p class="meta">update: {date_short} {UPDATE_TIME}</p>
+<p class="meta">update: {date_short} {UPDATE_TIME} ohne Uhrzeit</p>
 <p class="meta">t&auml;gliche aktualisierung um {UPDATE_TIME} uhr</p>
 </header>
 <main>
