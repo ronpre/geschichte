@@ -21,6 +21,287 @@ MONTHS = {
 
 UPDATE_TIME = "09:00"
 
+CATEGORY_ORDER = [
+    "politik",
+    "wirtschaft",
+    "zeitgeschichte",
+    "gesellschaft",
+    "antike",
+]
+
+ARTICLES = {
+    "politik": [
+        {
+            "slug": "politik-1648",
+            "title": "Politik: Westfaelischer Frieden 1648",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 24. Oktober 1648 beendeten die Vertraege von Muenster und Osnabrueck den Dreissigjaehrigen Krieg, erkannten die Souveraenitaet der Reichsstaende an und verschoben das Machtgleichgewicht zugunsten Frankreichs und Schwedens.",
+                "<strong>Folgen:</strong> Die Vereinbarungen etablierten eine europaweite Diplomatie mit regelmaessigen Kongressen, gaben kleineren Staaten mehr Verhandlungsspielraum und verankerten die Idee, dass religioese Konflikte politisch vermittelt werden koennen.",
+                "<strong>Was wir gelernt haben:</strong> Dauerhafte Friedensordnungen benoetigen geteilte Sicherheitsgarantien, klare Grenzregelungen und Foren fuer Konfliktbearbeitung, damit Sieger und Besiegte langfristig kooperieren.",
+                "<strong>Vertiefung:</strong> Westfaelische Instrumente wie Gesandtenkongresse und Protokollregeln praegen bis heute zwischenstaatliche Verhandlungen und legten die Grundlage fuer moderne Voelkerrechtsprinzipien.",
+            ],
+            "source_label": "Encyclopaedia Britannica",
+            "source_title": "Peace of Westphalia",
+            "source_url": "https://www.britannica.com/event/Peace-of-Westphalia",
+        },
+        {
+            "slug": "politik-1947",
+            "title": "Politik: Unabhaengigkeit Indiens 1947",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 15. August 1947 entliess Grossbritannien das ehemalige Britisch-Indien in die Unabhaengigkeit, wodurch die Dominions Indien und Pakistan entstanden und eine massive Migrationsbewegung ausgeloest wurde.",
+                "<strong>Folgen:</strong> Die Teilung schuf neue Verfassungsprozesse, stellte Verwaltungsstrukturen auf die Probe und machte Grenzfragen wie Kaschmir zum zentralen Konfliktfeld zwischen den Nachbarstaaten.",
+                "<strong>Was wir gelernt haben:</strong> Dekolonisation gelingt nachhaltiger, wenn Minderheitenschutz, gemeinsame Institutionen und wirtschaftliche Verflechtungen parallel aufgebaut werden.",
+                "<strong>Vertiefung:</strong> Die indische Verfassung von 1950 kombinierte parlamentarische Demokratie, Foederalismus und Grundrechte und wurde zum Referenzrahmen fuer viele Staaten des Globalen Suedens.",
+            ],
+            "source_label": "Library of Congress",
+            "source_title": "Independence for the Indian Subcontinent",
+            "source_url": "https://www.loc.gov/exhibits/british-empire/independence-for-indian-subcontinent.html",
+        },
+        {
+            "slug": "politik-1975",
+            "title": "Politik: Helsinki-Schlussakte 1975",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 1. August 1975 unterzeichneten 35 Staaten der KSZE in Helsinki eine Schlussakte, die Grenzen in Europa anerkannte, Menschenrechte hervorhob und vertrauensbildende Sicherheitsmassnahmen vereinbarte.",
+                "<strong>Folgen:</strong> Die Konferenz schuf Berichtspflichten, Beobachterformate und neue Kommunikationskanaele zwischen Ost und West, was Buergerrechtsbewegungen in Osteuropa zusaetzlich staerkte.",
+                "<strong>Was wir gelernt haben:</strong> Dialogplattformen koennen selbst unter Systemkonflikten funktionieren, wenn sie Transparenzanforderungen, militaerische Vertrauensmassnahmen und Zivilgesellschaftsrechte verbinden.",
+                "<strong>Vertiefung:</strong> Die OSZE uebernimmt bis heute Wahlbeobachtungen, Konfliktpraevention und Mediationen, die direkt aus den Helsinki-Standards abgeleitet sind.",
+            ],
+            "source_label": "OSZE",
+            "source_title": "Helsinki Final Act",
+            "source_url": "https://www.osce.org/helsinki-final-act",
+        },
+        {
+            "slug": "politik-1998",
+            "title": "Politik: Good-Friday-Agreement 1998",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 10. April 1998 legte das Karfreitagsabkommen den Grundstein fuer eine Machtteilung in Nordirland, beendete den bewaffneten Konflikt weitgehend und schuf neue grenzueberschreitende Institutionen.",
+                "<strong>Folgen:</strong> Gewaltakte nahmen drastisch ab, die Polizeireform begann und kulturelle Identitaeten erhielten gleichberechtigtere Anerkennung innerhalb eines gemeinsamen politischen Rahmens.",
+                "<strong>Was wir gelernt haben:</strong> Friedensabkommen muessen Sicherheitsgarantien, politische Teilhabe und soziooekonomische Entwicklungsprogramme kombinieren, um bewaffnete Gruppen langfristig zu integrieren.",
+                "<strong>Vertiefung:</strong> Die Einrichtung gemeinsamer Ministerien und Foren zwischen Belfast, Dublin und London dient international als Blaupause fuer postkonfliktuelle Machtteilung.",
+            ],
+            "source_label": "UK Government",
+            "source_title": "The Belfast Agreement",
+            "source_url": "https://www.gov.uk/government/publications/the-belfast-agreement",
+        },
+    ],
+    "wirtschaft": [
+        {
+            "slug": "wirtschaft-1944",
+            "title": "Wirtschaft: Bretton-Woods-System 1944",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Im Juli 1944 schufen 44 Staaten in Bretton Woods ein System fester Wechselkurse, gruendeten den Internationalen Waehrungsfonds und die Weltbank und banden den US-Dollar an Gold.",
+                "<strong>Folgen:</strong> Gemeinsame Regeln fuer Kapitalverkehr, Kreditlinien und Zahlungsbilanzen beschleunigten den Wiederaufbau und liessen den Welthandel bis in die 1960er Jahre stark wachsen.",
+                "<strong>Was wir gelernt haben:</strong> Globale Finanzarchitekturen benoetigen Anpassungsmechanismen und transparente Aufsicht, um Ungleichgewichte fruehzeitig zu korrigieren.",
+                "<strong>Vertiefung:</strong> Nachfolgeinstrumente des IWF, etwa Sonderziehungsrechte, greifen weiterhin auf Grundideen von Bretton Woods zurueck.",
+            ],
+            "source_label": "International Monetary Fund",
+            "source_title": "The Enduring Legacy of Bretton Woods",
+            "source_url": "https://www.imf.org/external/about/histcoop.htm",
+        },
+        {
+            "slug": "wirtschaft-1947",
+            "title": "Wirtschaft: Marshallplan 1947",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Im April 1948 startete das European Recovery Program, besser bekannt als Marshallplan, mit dem die USA Milliarden fuer den Wiederaufbau Westeuropas bereitstellten.",
+                "<strong>Folgen:</strong> Kredite, Rohstofflieferungen und Technologietransfer staerkten Industrieproduktion, fuehrten zu neuen Handelspartnerschaften und verankerten transatlantische Kooperation.",
+                "<strong>Was wir gelernt haben:</strong> Wiederaufbauprogramme wirken nachhaltiger, wenn sie wirtschaftliche Integration, Produktivitaetssteigerungen und Bildungsoffensiven verbinden.",
+                "<strong>Vertiefung:</strong> Die Organisation fuer Europaesche Wirtschaftliche Zusammenarbeit, Vorlaeufer der OECD, koordinierte die Mittelverwendung und wurde zu einem Forum fuer gemeinsame Planung.",
+            ],
+            "source_label": "US Department of State",
+            "source_title": "The Marshall Plan",
+            "source_url": "https://www.state.gov/the-marshall-plan/",
+        },
+        {
+            "slug": "wirtschaft-1999",
+            "title": "Wirtschaft: Euro-Einfuehrung 1999",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 1. Januar 1999 fuehrten elf EU-Staaten den Euro als Buchwaehrung ein und uebertrugen die Geldpolitik an die neu gegruendete Europaeische Zentralbank.",
+                "<strong>Folgen:</strong> Der gemeinsame Waehrungsraum erleichterte Handel, senkte Transaktionskosten und machte fiskalische Koordinierung sowie Stabilitaetspakte zwingend.",
+                "<strong>Was wir gelernt haben:</strong> Gemeinsame Waehrungen erfordern strenge Haushaltsueberwachung, Bankenaufsicht und geteilte Kriseninstrumente, um asymmetrische Schocks aufzufangen.",
+                "<strong>Vertiefung:</strong> Die Kapitalmarktunion, Rettungsschirme und die Bankenunion bauen auf den institutionellen Strukturen der Euro-Einfuehrung auf.",
+            ],
+            "source_label": "Europaeische Zentralbank",
+            "source_title": "Introduction of the Euro",
+            "source_url": "https://www.ecb.europa.eu/euro/intro/html/index.en.html",
+        },
+        {
+            "slug": "wirtschaft-2001",
+            "title": "Wirtschaft: WTO-Beitritt Chinas 2001",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 11. Dezember 2001 trat China der Welthandelsorganisation bei und verpflichtete sich zu Zollsenkungen, Marktliberalisierung und Rechtsreformen im Handel.",
+                "<strong>Folgen:</strong> Die Integration Chinas in den Welthandel senkte Konsumpreise weltweit, verstaerkte jedoch Wettbewerbsdruck auf Industriearbeitnehmer in vielen Regionen.",
+                "<strong>Was wir gelernt haben:</strong> Handelserweiterungen brauchen flankierende Sozial- und Strukturpolitik, damit Produktivitaetsgewinne breiter verteilt werden.",
+                "<strong>Vertiefung:</strong> Debatten ueber Lieferketten, Technologietransfer und faire Marktbedingungen praegen seither die internationale Wirtschaftspolitik.",
+            ],
+            "source_label": "World Trade Organization",
+            "source_title": "China and the WTO",
+            "source_url": "https://www.wto.org/english/thewto_e/acc_e/a1_china_e.htm",
+        },
+    ],
+    "zeitgeschichte": [
+        {
+            "slug": "zeitgeschichte-1989",
+            "title": "Zeitgeschichte: Fall der Berliner Mauer 1989",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 9. November 1989 oeffnete die Berliner Mauer nach einer missverstandenen Pressekonferenz, was spontane Grenzuebergaenge, Jubel und den raschen Zusammenbruch der DDR-Grenzinfrastruktur ausloeste.",
+                "<strong>Folgen:</strong> Familien wurden wiedervereint, kommunistische Regime in Osteuropa gerieten unter Reformdruck und die deutsche Einigung wurde binnen eines Jahres politisch umgesetzt.",
+                "<strong>Was wir gelernt haben:</strong> Kommunikation in Krisenzeiten kann kipppunktartig wirken; Transparenz und vorbereitete Fahrplaene sind entscheidend, um friedliche Umbrueche zu begleiten.",
+                "<strong>Vertiefung:</strong> Erinnerungsorte, Bildungsprogramme und Forschungsstaetten analysieren seither die Ursachen friedlicher Revolutionen und deren Bedeutung fuer heutige Transformationsprozesse.",
+            ],
+            "source_label": "Encyclopaedia Britannica",
+            "source_title": "Fall of the Berlin Wall",
+            "source_url": "https://www.britannica.com/event/fall-of-the-Berlin-Wall",
+        },
+        {
+            "slug": "zeitgeschichte-1986",
+            "title": "Zeitgeschichte: Reaktorkatastrophe von Tschernobyl 1986",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 26. April 1986 explodierte Block 4 des Kernkraftwerks Tschernobyl, verbreitete radioaktive Wolken ueber Europa und machte weite Gebiete um Pripjat unbewohnbar.",
+                "<strong>Folgen:</strong> Evakuierungen, Langzeitkrankheiten und enorme Dekontaminationskosten veraenderten die Energiedebatte weltweit und fuehrten zu strengeren Sicherheitsstandards.",
+                "<strong>Was wir gelernt haben:</strong> Hochrisikotechnologien brauchen transparente Aufsicht, Notfallplaene und eine Sicherheitskultur, die Fehler offenlegt, statt sie zu vertuschen.",
+                "<strong>Vertiefung:</strong> Internationale Agenturen wie die IAEA koordinieren seither Stresstests, Informationsaustausch und Sicherheitsmissionen fuer Atomkraftwerke.",
+            ],
+            "source_label": "International Atomic Energy Agency",
+            "source_title": "Chernobyl Accident",
+            "source_url": "https://www.iaea.org/topics/chernobyl",
+        },
+        {
+            "slug": "zeitgeschichte-1995",
+            "title": "Zeitgeschichte: Wahrheitskommission Suedafrika 1995",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> 1995 setzte Suedafrika die Truth and Reconciliation Commission ein, um Verbrechen der Apartheid aufzuklaeren, Opfern Gehoer zu geben und ueber Amnestien zu entscheiden.",
+                "<strong>Folgen:</strong> Oeffentliche Anhoerungen, Reparationsempfehlungen und nationale Debatten unterstuetzten den Uebergang zu einer inklusiveren Demokratie trotz ungeloster Ungleichheiten.",
+                "<strong>Was wir gelernt haben:</strong> Versoehnungspolitik verlangt Kombinationen aus Wahrheit, Verantwortlichkeit und Reformprogrammen, damit Vertrauen zwischen Gesellschaftsgruppen entstehen kann.",
+                "<strong>Vertiefung:</strong> Viele Laender uebersetzten das Modell in eigene Wahrheitskommissionen und kombinierten es mit Strafverfolgung sowie Restitutionsmassnahmen.",
+            ],
+            "source_label": "South African Government",
+            "source_title": "Truth and Reconciliation Commission Reports",
+            "source_url": "https://www.justice.gov.za/trc/report/",
+        },
+        {
+            "slug": "zeitgeschichte-2011",
+            "title": "Zeitgeschichte: Arabischer Fruehling 2011",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Ausgehend von Protesten in Tunesien Ende 2010 breitete sich 2011 eine Welle von Demonstrationen und Aufstaenden in der arabischen Welt aus, die Autoritarismus und soziale Ungleichheit infrage stellten.",
+                "<strong>Folgen:</strong> Manche Staaten sahen Reformen oder Regierungswechsel, andere gerieten in langwierige Konflikte; regionale und internationale Akteure rangen um Einfluss.",
+                "<strong>Was wir gelernt haben:</strong> Soziale Medien, demografischer Druck und wirtschaftliche Perspektivlosigkeit koennen politische Systeme schnell destabilisieren, wenn Reformkanaele fehlen.",
+                "<strong>Vertiefung:</strong> Analysen untersuchen weiterhin, welche institutionellen Faktoren den Transformationsverlauf bestimmten und wie Resilienz autoritaerer Regime funktioniert.",
+            ],
+            "source_label": "Council on Foreign Relations",
+            "source_title": "The Arab Spring at Ten",
+            "source_url": "https://www.cfr.org/timeline/arab-spring",
+        },
+    ],
+    "gesellschaft": [
+        {
+            "slug": "gesellschaft-1964",
+            "title": "Gesellschaft: Civil Rights Act 1964",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 2. Juli 1964 unterzeichnete US-Praesident Lyndon B. Johnson den Civil Rights Act, der Rassentrennung im oeffentlichen Leben verbot und den Zugang zu Wahlrechten schuetze.",
+                "<strong>Folgen:</strong> Gerichte, Bundesbehoerden und Aktivistinnen konnten diskriminierende Praktiken konsequenter anfechten; das Gesetz wirkte als Motor fuer weitere Gleichberechtigungsagenda.",
+                "<strong>Was wir gelernt haben:</strong> Gesetzliche Gleichstellung muss mit Durchsetzungsmechanismen, Bildungsinvestitionen und gesellschaftlichem Dialog flankiert werden, damit sie Wirkung entfaltet.",
+                "<strong>Vertiefung:</strong> Der Civil Rights Act bildet eine Grundlage fuer spaetere Antidiskriminierungsnormen, etwa im Bereich Behinderung, Geschlecht oder Herkunft.",
+            ],
+            "source_label": "National Archives",
+            "source_title": "The Civil Rights Act",
+            "source_url": "https://www.archives.gov/milestone-documents/civil-rights-act",
+        },
+        {
+            "slug": "gesellschaft-1971",
+            "title": "Gesellschaft: Frauenstimmrecht Schweiz 1971",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> In einer Volksabstimmung am 7. Februar 1971 sprach sich die Schweiz fuer das Frauenstimmrecht auf Bundesebene aus und schloss damit eine lange Phase der politischen Ausschliessung.",
+                "<strong>Folgen:</strong> Frauen konnten nun an nationalen Wahlen teilnehmen, Mandate uebernehmen und Gleichstellungsfragen staerker auf die politische Agenda setzen.",
+                "<strong>Was wir gelernt haben:</strong> Inklusivere Demokratien entstehen durch hartnaeckige Zivilgesellschaft, Allianzen ueber Parteigrenzen hinweg und durch die Argumentation, dass Teilhabe Demokratie stabilisiert.",
+                "<strong>Vertiefung:</strong> Kantone passten sukzessive ihre Gesetze an, waehrend Bildungsinitiativen politische Partizipation von Frauen weiter foerderten.",
+            ],
+            "source_label": "swissinfo",
+            "source_title": "Women gain the vote in Switzerland",
+            "source_url": "https://www.swissinfo.ch/eng/politics/womens-vote-50-years/46377464",
+        },
+        {
+            "slug": "gesellschaft-1991",
+            "title": "Gesellschaft: World Wide Web 1991",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 6. August 1991 stellte das CERN das World Wide Web der Oeffentlichkeit zur Verfuegung, wodurch Hypertext-Dokumente weltweit ueber das Internet abrufbar wurden.",
+                "<strong>Folgen:</strong> Forschung, Medien, Handel und Bildung verlagerten Inhalte ins Netz; neue Branchen und digitale Kommunikationsformen entstanden in kurzer Zeit.",
+                "<strong>Was wir gelernt haben:</strong> Offene Standards und lizenzfreie Technologien beschleunigen Innovation, muessen aber von Datenschutz- und Ethikregeln begleitet werden.",
+                "<strong>Vertiefung:</strong> Das Web-Konsortium setzt bis heute technische Spezifikationen fest, waehrend Debatten um digitale Souveraenitaet und Plattformregulierung an Bedeutung gewinnen.",
+            ],
+            "source_label": "CERN",
+            "source_title": "The Birth of the Web",
+            "source_url": "https://home.cern/science/computing/birth-web",
+        },
+        {
+            "slug": "gesellschaft-2006",
+            "title": "Gesellschaft: UN-Behindertenrechtskonvention 2006",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Die UN-Generalversammlung verabschiedete am 13. Dezember 2006 die Konvention ueber die Rechte von Menschen mit Behinderungen, die 2008 in Kraft trat.",
+                "<strong>Folgen:</strong> Staaten verpflichteten sich zu Barrierefreiheit, Inklusion im Bildungssystem und rechtlicher Gleichstellung; Monitoringstellen ueberwachen Fortschritte und Defizite.",
+                "<strong>Was wir gelernt haben:</strong> Menschenrechte muessen intersektional gedacht werden, damit strukturelle Diskriminierung in Arbeit, Wohnen und politischer Teilhabe abgebaut wird.",
+                "<strong>Vertiefung:</strong> Nationale Aktionsplaene, Aktionsforschung und Selbstvertretungsorganisationen treiben seitdem Reformen fuer inklusive Gesellschaften voran.",
+            ],
+            "source_label": "Vereinte Nationen",
+            "source_title": "Convention on the Rights of Persons with Disabilities",
+            "source_url": "https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities.html",
+        },
+    ],
+    "antike": [
+        {
+            "slug": "antike-1750",
+            "title": "Antike: Kodex Hammurabi ca. 1750 v. Chr.",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Um 1750 v. Chr. liess Koenig Hammurabi von Babylon einen umfangreichen Gesetzeskorpus in Stein meisseln, der Eigentums-, Familien- und Strafrecht regelte.",
+                "<strong>Folgen:</strong> Der Kodex schuf Rechtssicherheit fuer Handel und Verwaltung, legitimierte monarchische Autoritaet und diente als Vorlage fuer spaetere Keilschriftgesetzgebungen.",
+                "<strong>Was wir gelernt haben:</strong> Schriftliche Gesetze erhoehen Transparenz, muessen aber regelmaessig angepasst werden, damit soziale Gruppen nicht benachteiligt werden.",
+                "<strong>Vertiefung:</strong> Der Kodex zeigt fruehe Abstufungen von Strafen nach sozialem Status und inspiriert Forschungen zu Gerechtigkeitsvorstellungen im Alten Orient.",
+            ],
+            "source_label": "Encyclopaedia Britannica",
+            "source_title": "Code of Hammurabi",
+            "source_url": "https://www.britannica.com/topic/Code-of-Hammurabi",
+        },
+        {
+            "slug": "antike-0300",
+            "title": "Antike: Bibliothek von Alexandria 3. Jh. v. Chr.",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Im 3. Jahrhundert v. Chr. gruendete das ptolemaeische Herrscherhaus in Alexandria eine Bibliothek, die Aufbewahrung und Uebersetzung antiker Texte zum Ziel hatte.",
+                "<strong>Folgen:</strong> Gelehrte aus vielen Regionen tauschten Wissen aus, katalogisierten Schriften und entwickelten philologische Methoden, die Wissenschaften bis heute praegen.",
+                "<strong>Was wir gelernt haben:</strong> Wissenszentren gedeihen durch offene Sammlungen, Sprachkompetenz und staatliche Foerderung, bleiben jedoch an politische Stabilitaet gebunden.",
+                "<strong>Vertiefung:</strong> Rekonstruktionen der Bibliothek zeigen, wie antike Infrastruktur und Stiftungen globale Wissensnetzwerke ermoeglichten.",
+            ],
+            "source_label": "Encyclopaedia Britannica",
+            "source_title": "Library of Alexandria",
+            "source_url": "https://www.britannica.com/place/Library-of-Alexandria",
+        },
+        {
+            "slug": "antike-0594",
+            "title": "Antike: Reformen des Solon 594 v. Chr.",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> 594 v. Chr. uebernahm Solon in Athen weitreichende Vollmachten, hob Schuldknechtschaft auf und reorganisierte politische Beteiligung nach Einkommensklassen.",
+                "<strong>Folgen:</strong> Die Reformen stabilisierten Athen, weiteten Mitbestimmung aus und legten Grundlagen fuer spaetere demokratische Institutionen wie Rat und Volksgericht.",
+                "<strong>Was wir gelernt haben:</strong> Soziale Spannungen lassen sich durch ausgewogene Kombinationen von Schuldenerlass, Rechtsreform und politischer Inklusion entspannen.",
+                "<strong>Vertiefung:</strong> Spaetere Gesetzgeber wie Kleisthenes knuepften an Solons Kompromisse an und entwickelten die attische Demokratie weiter.",
+            ],
+            "source_label": "Encyclopaedia Britannica",
+            "source_title": "Solon",
+            "source_url": "https://www.britannica.com/biography/Solon",
+        },
+        {
+            "slug": "antike-0312",
+            "title": "Antike: Via Appia 312 v. Chr.",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> 312 v. Chr. begann Rom den Bau der Via Appia, einer befestigten Fernstrasse, die die Hauptstadt mit Sueditalien verband und Truppentransporte beschleunigte.",
+                "<strong>Folgen:</strong> Die Strasse erleichterte Handel, Verwaltung und kulturellen Austausch und wurde zum Vorbild fuer das roemische Strassennetz.",
+                "<strong>Was wir gelernt haben:</strong> Infrastrukturprojekte koennen Machtprojektion, Wirtschaft und Integration gleichzeitig staerken, wenn Wartung und Sicherheit gewaehrleistet sind.",
+                "<strong>Vertiefung:</strong> Archaeologische Untersuchungen zeigen, wie Ingenieurkunst, Vermessung und lokale Arbeitskraefte zusammenspielten, um dauerhafte Verkehrswege zu schaffen.",
+            ],
+            "source_label": "Encyclopaedia Britannica",
+            "source_title": "Appian Way",
+            "source_url": "https://www.britannica.com/topic/Appian-Way",
+        },
+    ],
+}
+
 
 def german_long_date(dt: datetime) -> str:
     return f"{dt.day}. {MONTHS[dt.month]} {dt.year}"
@@ -30,7 +311,42 @@ def german_short_date(dt: datetime) -> str:
     return f"{dt.day}.{dt.month:02d}.{str(dt.year)[-2:]}"
 
 
-def build_html(date_long: str, date_short: str) -> str:
+def select_articles(now: datetime) -> list[dict[str, object]]:
+    selections = []
+    ordinal = now.date().toordinal()
+    for position, category in enumerate(CATEGORY_ORDER):
+        pool = ARTICLES[category]
+        index = (ordinal + position) % len(pool)
+        selections.append(pool[index])
+    return selections
+
+
+def build_html(date_long: str, date_short: str, articles: list[dict[str, object]]) -> str:
+    sections = []
+    footnotes = []
+    for idx, article in enumerate(articles, start=1):
+        section_lines = [
+            f'<section class="artikel" aria-labelledby="{article["slug"]}">',
+            f'<h2 id="{article["slug"]}">{article["title"]}</h2>',
+        ]
+        for paragraph_index, paragraph in enumerate(article["paragraphs"]):
+            if paragraph_index == 0:
+                section_lines.append(
+                    f'<p>{paragraph}<sup><a id="ref-{idx}" href="#fn-{idx}">[{idx}]</a></sup></p>'
+                )
+            else:
+                section_lines.append(f"<p>{paragraph}</p>")
+        section_lines.append("</section>")
+        sections.append("\n".join(section_lines))
+        footnotes.append(
+            f'<li id="fn-{idx}">{article["source_label"]}: "{article["source_title"]}". '
+            f'<a href="{article["source_url"]}">{article["source_url"]}</a> '
+            f'<a href="#ref-{idx}">Zurueck</a></li>'
+        )
+
+    sections_html = "\n".join(sections)
+    footnotes_html = "\n".join(footnotes)
+
     return f"""<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -56,51 +372,13 @@ def build_html(date_long: str, date_short: str) -> str:
 <p class="meta">update: {date_short}</p>
 </header>
 <main>
-<section class="artikel" aria-labelledby="politik-1990">
-<h2 id="politik-1990">Politik: Deutsche Wiedervereinigung 1990</h2>
-<p><strong>Ereignis:</strong> Am 3. Oktober 1990 trat die Deutsche Demokratische Republik auf Grundlage des Einigungsvertrags der Bundesrepublik Deutschland bei, womit die friedliche Revolution von 1989 politisch vollendet und die deutsche Teilung nach vier Jahrzehnten beendet wurde.<sup><a id="ref-1" href="#fn-1">[1]</a></sup> Vorausgegangen waren die Montagsdemonstrationen, die &Ouml;ffnung der innerdeutschen Grenze am 9. November 1989 sowie intensive Zwei-plus-Vier-Verhandlungen mit den Siegerm&auml;chten des Zweiten Weltkriegs, die den &auml;u&szlig;eren Rahmen f&uuml;r die Einheit schufen.</p>
-<p><strong>Folgen:</strong> Die institutionelle und wirtschaftliche Zusammenf&uuml;hrung zweier zuvor strikt getrennter Staatssysteme f&uuml;hrte zu Verfassungs- und Verwaltungsreformen, milliardenschweren Aufbauprogrammen sowie einer beschleunigten Integration Deutschlands in die Strukturen der Europ&auml;ischen Gemeinschaft und der NATO. Zugleich entstand eine langanhaltende Transformationsphase mit dem Abbau nicht wettbewerbsf&auml;higer Industrien, massiver Binnenmigration und der Notwendigkeit, unterschiedliche Erinnerungskulturen miteinander zu verbinden.</p>
-<p><strong>Was wir gelernt haben:</strong> Dauerhafte Stabilit&auml;t nach Regimewechseln setzt voraus, dass politische Teilhabe erweitert, soziale Disparit&auml;ten aktiv ausgeglichen und au&szlig;enpolitische Partnerschaften gepflegt werden, um Vertrauen in neue demokratische Institutionen zu verankern. Au&szlig;erdem zeigt die Wiedervereinigung, dass neben formalen Vertr&auml;gen auch kulturelle Verst&auml;ndigung, Medienpluralismus und Bildungsangebote entscheidend sind, um geteilte Gesellschaften wieder zusammenzuf&uuml;hren.</p>
-<p><strong>Vertiefung:</strong> Die Auseinandersetzung mit den unterschiedlichen Diktaturerfahrungen in Ost- und Westdeutschland pr&auml;gte neue Gedenk- und Bildungsst&auml;tten, w&auml;hrend der Solidarpakt und der L&auml;nderfinanzausgleich bis heute als finanzpolitische Werkzeuge einer Angleichung dienen.</p>
-</section>
-<section class="artikel" aria-labelledby="wirtschaft-2008">
-<h2 id="wirtschaft-2008">Wirtschaft: Globale Finanzkrise 2008</h2>
-<p><strong>Ereignis:</strong> Der Kollaps des US-Immobilienmarktes, der Zerfall komplexer Wertpapierketten und die Insolvenz der Investmentbank Lehman Brothers im September 2008 l&ouml;sten eine weltweite Vertrauens- und Liquidit&auml;tskrise im Finanzsystem aus.<sup><a id="ref-2" href="#fn-2">[2]</a></sup> In kurzer Zeit verbreiteten sich Schockwellen &uuml;ber sogenannte Schattenbanken, Kreditversicherungen und Derivatem&auml;rkte in nahezu alle Volkswirtschaften, weil viele Institute identische, schwer bewertbare Produkte hielten.</p>
-<p><strong>Folgen:</strong> Regierungen und Zentralbanken stabilisierten Banken mit Garantien, Verstaatlichungen und Notkrediten, legten gro&szlig;e Konjunkturpakete auf und versch&auml;rften die Regulierung durch Ma&szlig;nahmen wie Basel III, Stresstests und Verbraucherschutzauflagen, um das globale Finanzsystem funktionsf&auml;hig zu halten. Arbeitslosigkeit und Staatsverschuldung stiegen an, Immobilienm&auml;rkte korrigierten sich drastisch und in Europa m&uuml;ndete die Krise in die Staatsschuldenproblematik einzelner Eurol&auml;nder, was neue Rettungsmechanismen wie den ESM hervorbrachte.</p>
-<p><strong>Was wir gelernt haben:</strong> Systemische Risiken entstehen aus Intransparenz, &Uuml;berhebelung und Anreizkonflikten; nur koordinierte Aufsicht, robuste Eigenkapitalanforderungen und eine Kultur verantwortlichen Risikomanagements verhindern, dass Fehlentwicklungen ganze Volkswirtschaften destabilisieren. Die Krise hat zudem verdeutlicht, dass finanzielle Bildung, klare Haftungsregeln und eine makroprudenzielle Politik n&ouml;tig sind, um spekulative Blasen fr&uuml;hzeitig einzud&auml;mmen.</p>
-<p><strong>Vertiefung:</strong> Die globale Finanzkrise f&uuml;hrte zu einem breiten gesellschaftlichen Diskurs &uuml;ber soziale Ungleichheit, die Rolle von Zentralbanken und die Verantwortung internationaler Ratingagenturen, was bis heute Reformen in Unternehmensf&uuml;hrung und Nachhaltigkeitsberichterstattung beeinflusst.</p>
-</section>
-<section class="artikel" aria-labelledby="zeitgeschichte-2011">
-<h2 id="zeitgeschichte-2011">Zeitgeschichte: Reaktorkatastrophe von Fukushima 2011</h2>
-<p><strong>Ereignis:</strong> Nach einem schweren Erdbeben der St&auml;rke 9,0 und einem daraus resultierenden Tsunami kam es am 11. M&auml;rz 2011 im japanischen Kernkraftwerk Fukushima Daiichi zu Stromausf&auml;llen, Ausf&auml;llen der K&uuml;hlsysteme, mehreren Kernschmelzen und erheblichen radioaktiven Freisetzungen in Luft und Meer.<sup><a id="ref-3" href="#fn-3">[3]</a></sup> Die Naturkatastrophe zerst&ouml;rte Notstromaggregate, &uuml;berflutete Sicherheitsanlagen und brachte Betreiber, Regierung und internationale Helfer in eine hochkomplexe Notfalllage, in der Entscheidungen unter gro&szlig;em Zeitdruck getroffen werden mussten.</p>
-<p><strong>Folgen:</strong> Mehr als 150.000 Menschen mussten langfristig evakuiert werden, gro&szlig;e landwirtschaftliche Fl&auml;chen blieben kontaminiert, Japan initiierte einen umfassenden Energieumbau mit verst&auml;rkten Investitionen in erneuerbare Quellen, und weltweit wurden Sicherheitsstandards, Stresstests sowie Ausstiegsentscheidungen f&uuml;r Kernkraftwerke neu bewertet. Die soziale und psychologische Belastung f&uuml;r die betroffene Bev&ouml;lkerung h&auml;lt bis heute an, und umfangreiche Dekontaminations- sowie R&uuml;ckbauarbeiten werden noch Jahrzehnte beanspruchen.</p>
-<p><strong>Was wir gelernt haben:</strong> Der Umgang mit Hochrisikotechnologien verlangt redundante Schutzsysteme, eine Kultur der Sicherheitsvorsorge und eine offene Krisenkommunikation, damit Bev&ouml;lkerung, Politik und Betreiber fr&uuml;hzeitig auf Worst-Case-Szenarien vorbereitet sind. Fukushima hat zudem deutlich gemacht, dass Klimawandel-bedingte Extremereignisse in Risikobewertungen st&auml;rker ber&uuml;cksichtigt und internationale Notfallkooperationen ge&uuml;bt werden m&uuml;ssen.</p>
-<p><strong>Vertiefung:</strong> Die Katastrophe beschleunigte in Deutschland den beschlossenen Ausstieg aus der Kernenergie, verst&auml;rkte weltweit die Forschung an Speichertechnologien und f&uuml;hrte zur Einrichtung neuer unabh&auml;ngiger Sicherheitsbeh&ouml;rden mit erweiterten Pr&uuml;fkompetenzen.</p>
-</section>
-<section class="artikel" aria-labelledby="fruehneuzeit-1789">
-<h2 id="fruehneuzeit-1789">Gesellschaft: Franz&ouml;sische Revolution 1789</h2>
-<p><strong>Ereignis:</strong> Am 14. Juli 1789 st&uuml;rmte die Pariser Bev&ouml;lkerung die Bastille und setzte damit den Auftakt f&uuml;r einen tiefgreifenden politischen und gesellschaftlichen Wandel in Frankreich, der zur Abschaffung der Feudalordnung, zur Erkl&auml;rung der Menschen- und B&uuml;rgerrechte und zur Umgestaltung staatlicher Macht f&uuml;hrte.<sup><a id="ref-4" href="#fn-4">[4]</a></sup> In den folgenden Jahren pr&auml;gten verfassunggebende Versammlungen, der politisierte Adel, radikale Clubs und milit&auml;rische Auseinandersetzungen das Kr&auml;ftefeld Europas.</p>
-<p><strong>Folgen:</strong> Die Revolution inspirierte Bewegungen in ganz Europa und Amerika, verbreitete egalit&auml;re Ideale, f&uuml;hrte aber auch zu Gewaltphasen wie der Schreckensherrschaft sowie zu Gegenreaktionen monarchischer M&auml;chte. Langfristig l&ouml;ste sie tiefgreifende Reformen in Verwaltung, Rechtsordnung und Bildung aus und bildete den N&auml;hrboden f&uuml;r moderne Nationalstaatskonzepte.</p>
-<p><strong>Was wir gelernt haben:</strong> Gesellschaftlicher Wandel ben&ouml;tigt legitime Partizipationskan&auml;le und stabile Institutionen; ohne sie drohen revolution&auml;re Dynamiken in Gewalt und Autoritarismus umzuschlagen. Die Revolution verdeutlicht, wie wichtig eine breite Repr&auml;sentation und soziale Absicherung f&uuml;r die Akzeptanz politischer Systeme ist.</p>
-<p><strong>Vertiefung:</strong> Die Debatten um Freiheit, Gleichheit und Br&uuml;derlichkeit beeinflussten das V&ouml;lkerrecht, die Entwicklung parlamentarischer Systeme und die Codifizierung universeller Menschenrechte, deren Wirkung bis in moderne Verfassungen reicht.</p>
-</section>
-<section class="artikel" aria-labelledby="antike-0027">
-<h2 id="antike-0027">Antike: Beginn der Pax Romana 27 v. Chr.</h2>
-<p><strong>Ereignis:</strong> Mit der Macht&uuml;bernahme Octavians als Augustus im Jahr 27 v. Chr. konsolidierte sich das R&ouml;mische Reich nach langj&auml;hrigen B&uuml;rgerkriegen und trat in eine jahrzehntelange Phase relativen Friedens, wirtschaftlicher Stabilit&auml;t und territorialer Expansion ein, die als Pax Romana bekannt wurde.<sup><a id="ref-5" href="#fn-5">[5]</a></sup> Reorganisationen von Heer, Verwaltung und Infrastruktur legten die Grundlage f&uuml;r eine zentral gesteuerte Reichsordnung.</p>
-<p><strong>Folgen:</strong> Die Pax Romana f&ouml;rderte Handel, St&auml;dtebau und kulturellen Austausch im gesamten Mittelmeerraum, stabilisierte Grenzregionen und erm&ouml;glichte den Ausbau von Rechtssystemen sowie Verkehrswegen wie Stra&szlig;en und Aqu&auml;dukten. Gleichzeitig sicherte sie die Macht des Princeps und ver&auml;nderte die politische Kultur Roms dauerhaft zugunsten eines kaiserlichen Systems.</p>
-<p><strong>Was wir gelernt haben:</strong> Nachhaltige Friedensordnungen entstehen durch legitime Machtstrukturen, effiziente Verwaltung und wirtschaftliche Integration; sie bleiben jedoch anf&auml;llig, wenn politische Nachfolge ungekl&auml;rt und regionale Interessen unber&uuml;cksichtigt bleiben. Die Pax Romana illustriert, wie Infrastruktur und Rechtssicherheit zur Stabilisierung gro&szlig;er politischer Einheiten beitragen.</p>
-<p><strong>Vertiefung:</strong> Der kulturelle Austausch w&auml;hrend der Pax Romana verbreitete lateinische Sprache, r&ouml;misches Recht und technische Innovationen, was die Grundlage f&uuml;r europ&auml;ische Rechts- und Verwaltungstraditionen sowie f&uuml;r das Netzwerk von Handelsrouten legte, auf denen sp&auml;tere Religionen und Ideen reisten.</p>
-</section>
+{sections_html}
 </main>
 <footer>
 <section class="footnotes" aria-label="Quellen">
 <h3>Quellen</h3>
 <ol>
-<li id="fn-1">Bundeszentrale f&uuml;r politische Bildung: "Der Weg zur Deutschen Einheit". <a href="https://www.bpb.de/themen/deutsche-einheit/">https://www.bpb.de/themen/deutsche-einheit/</a> <a href="#ref-1">Zur&uuml;ck</a></li>
-<li id="fn-2">International Monetary Fund: "The Great Recession" (World Economic Outlook 2009). <a href="https://www.imf.org/en/Publications/WEO/Issues/2016/12/31/World-Economic-Outlook-October-2009-Sustaining-the-Recovery-23332">https://www.imf.org/en/Publications/WEO/Issues/2016/12/31/World-Economic-Outlook-October-2009-Sustaining-the-Recovery-23332</a> <a href="#ref-2">Zur&uuml;ck</a></li>
-<li id="fn-3">International Atomic Energy Agency: "Fukushima Daiichi Accident Report". <a href="https://www.iaea.org/publications/10962/the-fukushima-daiichi-accident">https://www.iaea.org/publications/10962/the-fukushima-daiichi-accident</a> <a href="#ref-3">Zur&uuml;ck</a></li>
-<li id="fn-4">Encyclopaedia Britannica: "French Revolution". <a href="https://www.britannica.com/event/French-Revolution">https://www.britannica.com/event/French-Revolution</a> <a href="#ref-4">Zur&uuml;ck</a></li>
-<li id="fn-5">Encyclopaedia Britannica: "Pax Romana". <a href="https://www.britannica.com/event/Pax-Romana">https://www.britannica.com/event/Pax-Romana</a> <a href="#ref-5">Zur&uuml;ck</a></li>
+{footnotes_html}
 </ol>
 </section>
 </footer>
@@ -109,38 +387,47 @@ def build_html(date_long: str, date_short: str) -> str:
 """
 
 
-def build_pdf_content(date_long: str, date_short: str) -> bytes:
+def build_pdf_content(date_long: str, date_short: str, articles: list[dict[str, object]]) -> bytes:
     lines = [
         "BT",
         "/F1 12 Tf",
         "72 760 Td",
         "(Dokumentation neuere geschichte) Tj",
         "0 -18 Td",
-    f"(update: {date_short}) Tj",
+        f"(update: {date_short}) Tj",
         "0 -30 Td",
         "(Automatisierung:) Tj",
         "0 -18 Td",
-        "(1. index.html dient als Einstieg fuer GitHub Pages und stimmt) Tj",
+        "(1. Artikelpool wird taeglich anhand des Datums neu gewaehlt.) Tj",
         "0 -18 Td",
-        "(   inhaltlich mit tageschronik.html ueberein.) Tj",
+        "(2. Skript ersetzt index.html, tageschronik.html und das PDF vollstaendig.) Tj",
         "0 -18 Td",
-        "(2. Beide HTML-Dateien enthalten fuenf Ressorts zu Politik,) Tj",
+        f"(3. GitHub Action aktualisiert Inhalte um {UPDATE_TIME} Uhr.) Tj",
         "0 -18 Td",
-        "(   Wirtschaft, Zeitgeschichte, Gesellschaft und Antike.) Tj",
-    "0 -18 Td",
-    f"(3. GitHub Action aktualisiert Inhalte taeglich um {UPDATE_TIME} Uhr.) Tj",
+        "(4. Quellen werden automatisch als Fussnoten eingefuegt.) Tj",
         "0 -18 Td",
-        f"(4. Titel aktualisiert auf {date_long}.) Tj",
-        "0 -18 Td",
-        "(5. Quellen werden weiterhin als Fussnoten gepflegt.) Tj",
-        "0 -30 Td",
-        "(Status:) Tj",
-        "0 -18 Td",
-        "(Dieses PDF dokumentiert den Stand der HTML-Dateien am) Tj",
-        "0 -18 Td",
-        f"({date_long}.) Tj",
-        "ET",
+        "(Auswahl des Tages:) Tj",
     ]
+
+    for article in articles:
+        title = article["title"]
+        if isinstance(title, str):
+            if len(title) > 90:
+                title = title[:87] + "..."
+            title = title.replace("(", "\\(").replace(")", "\\)")
+            lines.extend(["0 -18 Td", f"({title}) Tj"])
+
+    lines.extend(
+        [
+            "0 -30 Td",
+            "(Status:) Tj",
+            "0 -18 Td",
+            "(Dieses PDF dokumentiert den Stand der HTML-Dateien am) Tj",
+            "0 -18 Td",
+            f"({date_long}) Tj",
+            "ET",
+        ]
+    )
     stream = ("\n".join(lines) + "\n").encode("ascii")
     objs = []
     objs.append(b"1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n")
@@ -173,14 +460,15 @@ def main() -> None:
     now = datetime.now(ZoneInfo("Europe/Berlin"))
     date_long = german_long_date(now)
     date_short = german_short_date(now)
+    articles = select_articles(now)
 
-    html_content = build_html(date_long, date_short)
+    html_content = build_html(date_long, date_short, articles)
     base_path = Path(__file__).resolve().parent
 
     for filename in ("index.html", "tageschronik.html"):
         (base_path / filename).write_text(html_content, encoding="utf-8")
 
-    pdf_bytes = build_pdf_content(date_long, date_short)
+    pdf_bytes = build_pdf_content(date_long, date_short, articles)
     (base_path / "dokumentation.pdf").write_bytes(pdf_bytes)
 
 
