@@ -19,7 +19,7 @@ MONTHS = {
     12: "Dezember",
 }
 
-UPDATE_TIME = "09:00"
+UPDATE_TIME = "08:00"
 
 CATEGORY_ORDER = [
     "politik",
@@ -352,7 +352,7 @@ def build_html(date_long: str, date_short: str, articles: list[dict[str, object]
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>neuere geschichte &ndash; {date_long}</title>
+<title>history &ndash; {date_long}</title>
 <style>
     body {{ font-family: Arial, sans-serif; line-height: 1.6; margin: 2rem auto; max-width: 900px; padding: 0 1rem; }}
     header, footer {{ border-bottom: 1px solid #ccc; padding-bottom: 1rem; margin-bottom: 1.5rem; }}
@@ -368,7 +368,7 @@ def build_html(date_long: str, date_short: str, articles: list[dict[str, object]
 </head>
 <body>
 <header>
-<h1>neuere geschichte</h1>
+<h1>history</h1>
 <p class="meta">update: {date_short}</p>
 </header>
 <main>
@@ -392,7 +392,7 @@ def build_pdf_content(date_long: str, date_short: str, articles: list[dict[str, 
         "BT",
         "/F1 12 Tf",
         "72 760 Td",
-        "(Dokumentation neuere geschichte) Tj",
+        "(Dokumentation history) Tj",
         "0 -18 Td",
         f"(update: {date_short}) Tj",
         "0 -30 Td",
