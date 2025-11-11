@@ -19,7 +19,7 @@ MONTHS = {
     12: "Dezember",
 }
 
-UPDATE_TIME = "08:00"
+UPDATE_TIME = "09:00"
 
 CATEGORY_ORDER = [
     "politik",

@@ -9,14 +9,14 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
 endobj
 4 0 obj
-<< /Length 838 >>
+<< /Length 839 >>
 stream
 BT
 /F1 12 Tf
 72 760 Td
 (Dokumentation history) Tj
 0 -18 Td
-(update: 10.11.25) Tj
+(update: 11.11.25) Tj
 0 -30 Td
 (Automatisierung:) Tj
 0 -18 Td
@@ -24,27 +24,27 @@ BT
 0 -18 Td
 (2. Skript ersetzt index.html, tageschronik.html und das PDF vollstaendig.) Tj
 0 -18 Td
-(3. GitHub Action aktualisiert Inhalte um 08:00 Uhr.) Tj
+(3. GitHub Action aktualisiert Inhalte um 09:00 Uhr.) Tj
 0 -18 Td
 (4. Quellen werden automatisch als Fussnoten eingefuegt.) Tj
 0 -18 Td
 (Auswahl des Tages:) Tj
 0 -18 Td
-(Politik: Unabhaengigkeit Indiens 1947) Tj
+(Politik: Helsinki-Schlussakte 1975) Tj
 0 -18 Td
-(Wirtschaft: Euro-Einfuehrung 1999) Tj
+(Wirtschaft: WTO-Beitritt Chinas 2001) Tj
 0 -18 Td
-(Zeitgeschichte: Arabischer Fruehling 2011) Tj
+(Zeitgeschichte: Fall der Berliner Mauer 1989) Tj
 0 -18 Td
-(Gesellschaft: Civil Rights Act 1964) Tj
+(Gesellschaft: Frauenstimmrecht Schweiz 1971) Tj
 0 -18 Td
-(Antike: Bibliothek von Alexandria 3. Jh. v. Chr.) Tj
+(Antike: Reformen des Solon 594 v. Chr.) Tj
 0 -30 Td
 (Status:) Tj
 0 -18 Td
 (Dieses PDF dokumentiert den Stand der HTML-Dateien am) Tj
 0 -18 Td
-(10. November 2025) Tj
+(11. November 2025) Tj
 ET
 endstream
 endobj
@@ -58,9 +58,9 @@ xref
 0000000058 00000 n 
 0000000115 00000 n 
 0000000241 00000 n 
-0000001129 00000 n 
+0000001130 00000 n 
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-1199
+1200
 %%EOF
