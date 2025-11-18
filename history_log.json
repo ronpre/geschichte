@@ -43,12 +43,39 @@
     {
       "date": "2025-11-19",
       "slugs": [
-        "politik-1998",
-        "wirtschaft-1944",
-        "zeitgeschichte-1986",
-        "gesellschaft-1991",
-        "antike-0312"
+        "politik-1992",
+        "wirtschaft-1957",
+        "zeitgeschichte-1969",
+        "gesellschaft-2017",
+        "antike-0490"
       ]
     }
+  ],
+  "used_slugs": [
+    "politik-1998",
+    "wirtschaft-1944",
+    "zeitgeschichte-1986",
+    "gesellschaft-1991",
+    "antike-0312",
+    "politik-1975",
+    "wirtschaft-2001",
+    "zeitgeschichte-1989",
+    "gesellschaft-1971",
+    "antike-0594",
+    "politik-1947",
+    "wirtschaft-1999",
+    "zeitgeschichte-2011",
+    "gesellschaft-1964",
+    "antike-0300",
+    "politik-1648",
+    "wirtschaft-1947",
+    "zeitgeschichte-1995",
+    "gesellschaft-2006",
+    "antike-1750",
+    "politik-1992",
+    "wirtschaft-1957",
+    "zeitgeschichte-1969",
+    "gesellschaft-2017",
+    "antike-0490"
   ]
 }

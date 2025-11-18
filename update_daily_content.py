@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 BASE_PATH = Path(__file__).resolve().parent
 HISTORY_LOG_PATH = BASE_PATH / "history_log.json"
 HISTORY_MAX_ENTRIES = 180
+HISTORY_USED_SLUGS_KEY = "used_slugs"
 
 MONTHS = {
     1: "Januar",
@@ -89,6 +90,19 @@ ARTICLES = {
             "source_title": "The Belfast Agreement",
             "source_url": "https://www.gov.uk/government/publications/the-belfast-agreement",
         },
+        {
+            "slug": "politik-1992",
+            "title": "Politik: Vertrag von Maastricht 1992",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 7. Februar 1992 unterzeichneten die Staaten der Europaeischen Gemeinschaft den Vertrag von Maastricht, der die Europaeische Union gruendete und Grundlagen fuer gemeinsame Waehrungs-, Aussen- und Innenpolitik legte.",
+                "<strong>Folgen:</strong> Der Vertrag fuehrte den Euro schrittweise ein, erweiterte das Mitentscheidungsverfahren des Europaeischen Parlaments und schuf neue Politikkoordination in Bereichen wie Bildung, Gesundheit und Umwelt.",
+                "<strong>Was wir gelernt haben:</strong> Tiefere Integration setzt klare Kompetenzverteilungen, demokratische Legitimation und verbindliche Konvergenzkriterien voraus, damit Mitgliedstaaten Reformen mittragen.",
+                "<strong>Vertiefung:</strong> Spaetere Vertragswerke wie Amsterdam, Nizza und Lissabon bauten auf Maastricht auf, indem sie Institutionen an Erweiterungen anpassten und die gemeinsame Aussen- und Sicherheitspolitik praezisierten.",
+            ],
+            "source_label": "Europaeische Union",
+            "source_title": "Vertrag von Maastricht",
+            "source_url": "https://european-union.europa.eu/principles-countries-history/history-eu/1990-1999/1992/de",
+        },
     ],
     "wirtschaft": [
         {
@@ -142,6 +156,19 @@ ARTICLES = {
             "source_label": "World Trade Organization",
             "source_title": "China and the WTO",
             "source_url": "https://www.wto.org/english/thewto_e/acc_e/a1_china_e.htm",
+        },
+        {
+            "slug": "wirtschaft-1957",
+            "title": "Wirtschaft: Roemische Vertraege 1957",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 25. Maerz 1957 unterzeichneten sechs Staaten die Roemischen Vertraege und gruendeten damit die Europaeische Wirtschaftsgemeinschaft sowie Euratom als Bausteine fuer einen gemeinsamen Markt.",
+                "<strong>Folgen:</strong> Zuelle wurden abgebaut, Wettbewerbsregeln vereinheitlicht und gemeinsame Institutionen geschaffen, was Handel, Produktivitaet und Investitionen im Binnenmarkt langfristig steigerte.",
+                "<strong>Was wir gelernt haben:</strong> Wirtschaftliche Integration braucht verbindliche Rechtsrahmen, faire Uebergangsfristen und Ausgleichsmechanismen fuer strukturschwaechere Regionen.",
+                "<strong>Vertiefung:</strong> Die heutige EU knuepft mit Binnenmarkt, Zollunion und Strukturfoerderung direkt an Prinzipien der Roemischen Vertraege an und erweitert sie um gemeinsame Standards in vielen Politikfeldern.",
+            ],
+            "source_label": "Europaeische Kommission",
+            "source_title": "Die Roemischen Vertraege",
+            "source_url": "https://european-union.europa.eu/principles-countries-history/history-eu/1950-1959/1957/de",
         },
     ],
     "zeitgeschichte": [
@@ -197,6 +224,19 @@ ARTICLES = {
             "source_title": "The Arab Spring at Ten",
             "source_url": "https://www.cfr.org/timeline/arab-spring",
         },
+        {
+            "slug": "zeitgeschichte-1969",
+            "title": "Zeitgeschichte: Mondlandung Apollo 11 1969",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 20. Juli 1969 landeten Neil Armstrong und Buzz Aldrin mit Apollo 11 auf dem Mond und setzten erstmals menschliche Schritte auf einen anderen Himmelskoerper.",
+                "<strong>Folgen:</strong> Die Mission demonstrierte technologische Leistungsfaehigkeit, foerderte Weltraumforschung und inspirierte Kooperationen in Wissenschaft, Navigation und Materialentwicklung.",
+                "<strong>Was wir gelernt haben:</strong> Grosse Forschungsprojekte erfordern langfristige Investitionen, klare Ziele und internationale Sicherheitsstandards, um gesellschaftliche Akzeptanz zu gewinnen.",
+                "<strong>Vertiefung:</strong> Nach Apollo etablierte die NASA Programme wie Skylab und das Space-Shuttle, waehrend internationale Partner spaeter mit der ISS gemeinsame Forschung ausbauten.",
+            ],
+            "source_label": "NASA",
+            "source_title": "Apollo 11 Mission Overview",
+            "source_url": "https://www.nasa.gov/mission_pages/apollo/missions/apollo11.html",
+        },
     ],
     "gesellschaft": [
         {
@@ -250,6 +290,19 @@ ARTICLES = {
             "source_label": "Vereinte Nationen",
             "source_title": "Convention on the Rights of Persons with Disabilities",
             "source_url": "https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities.html",
+        },
+        {
+            "slug": "gesellschaft-2017",
+            "title": "Gesellschaft: Ehe fuer alle Deutschland 2017",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 30. Juni 2017 beschloss der Deutsche Bundestag die Ehe fuer alle und oeffnete die zivilrechtliche Ehe unabhaengig vom Geschlecht der Partner.",
+                "<strong>Folgen:</strong> Gleichgeschlechtliche Paare erhielten volle Adoptions- und Erbrechte, Verwaltungen passten Formulare an und rechtliche Diskriminierungen wurden weiter abgebaut.",
+                "<strong>Was wir gelernt haben:</strong> Fortschritte in Gleichstellungsfragen benoetigen parlamentarische Mehrheiten, verfassungsrechtliche Absicherung und kontinuierliche Bewusstseinsarbeit.",
+                "<strong>Vertiefung:</strong> Nach dem Beschluss folgten Anpassungen in Familien- und Steuerrecht sowie Debatten ueber Schutz vor Diskriminierung im Arbeits- und Bildungsbereich.",
+            ],
+            "source_label": "Deutscher Bundestag",
+            "source_title": "Bundestag beschliesst Ehe fuer alle",
+            "source_url": "https://www.bundestag.de/dokumente/textarchiv/2017/kw26-de-ehe-513354",
         },
     ],
     "antike": [
@@ -305,6 +358,19 @@ ARTICLES = {
             "source_title": "Appian Way",
             "source_url": "https://www.britannica.com/topic/Appian-Way",
         },
+        {
+            "slug": "antike-0490",
+            "title": "Antike: Schlacht von Marathon 490 v. Chr.",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> 490 v. Chr. besiegten athenische Hopliten bei Marathon eine persische Invasionsarmee und stoppten damit vorerst die Ausdehnung des Achamenidenreichs nach Griechenland.",
+                "<strong>Folgen:</strong> Der Sieg staerkte das Selbstbewusstsein der griechischen Poleis, foerderte Milizsysteme und wurde zum Symbol fuer den Schutz demokratischer Strukturen gegen aeussere Bedrohungen.",
+                "<strong>Was wir gelernt haben:</strong> Mobilisierung freier Buerger und schnelle Kommunikation ueber Boten konnten strategische Vorteile schaffen, wenn politische Fuehrung geschlossen agierte.",
+                "<strong>Vertiefung:</strong> Historiker analysieren Marathon als Auftakt der Perserkriege und diskutieren, wie sich daraus Athener Seemacht, Delisch-Attischer Bund und klassische Kultur entwickelten.",
+            ],
+            "source_label": "Encyclopaedia Britannica",
+            "source_title": "Battle of Marathon",
+            "source_url": "https://www.britannica.com/event/Battle-of-Marathon",
+        },
     ],
 }
 
@@ -324,38 +390,50 @@ def german_long_date(dt: datetime) -> str:
 def german_short_date(dt: datetime) -> str:
     return f"{dt.day}.{dt.month:02d}.{str(dt.year)[-2:]}"
 
-def load_history(path: Path = HISTORY_LOG_PATH) -> dict[str, list[dict[str, object]]]:
+def load_history(path: Path = HISTORY_LOG_PATH) -> dict[str, object]:
+    default: dict[str, object] = {"history": [], HISTORY_USED_SLUGS_KEY: []}
     if not path.exists():
-        return {"history": []}
+        return default
 
     try:
         raw_data = json.loads(path.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError, UnicodeDecodeError):
-        return {"history": []}
+        return default
 
-    entries = raw_data.get("history")
-    if not isinstance(entries, list):
-        return {"history": []}
+    entries_raw = raw_data.get("history")
+    cleaned_entries: list[dict[str, object]] = []
+    if isinstance(entries_raw, list):
+        for entry in entries_raw:
+            if not isinstance(entry, dict):
+                continue
+            date_value = entry.get("date")
+            slugs_value = entry.get("slugs")
+            if isinstance(date_value, str) and isinstance(slugs_value, list):
+                valid_slugs = [slug for slug in slugs_value if isinstance(slug, str)]
+                cleaned_entries.append({"date": date_value, "slugs": valid_slugs})
 
-    cleaned: list[dict[str, object]] = []
-    for entry in entries:
-        if not isinstance(entry, dict):
-            continue
-        date_value = entry.get("date")
-        slugs_value = entry.get("slugs")
-        if isinstance(date_value, str) and isinstance(slugs_value, list):
-            valid_slugs = [slug for slug in slugs_value if isinstance(slug, str)]
-            cleaned.append({"date": date_value, "slugs": valid_slugs})
-    return {"history": cleaned}
+    used_slugs_raw = raw_data.get(HISTORY_USED_SLUGS_KEY)
+    used_slugs: list[str] = []
+    if isinstance(used_slugs_raw, list):
+        for slug in used_slugs_raw:
+            if isinstance(slug, str) and slug not in used_slugs:
+                used_slugs.append(slug)
+
+    result: dict[str, object] = {"history": cleaned_entries, HISTORY_USED_SLUGS_KEY: used_slugs}
+    _ensure_entry_slugs_tracked(result)
+    return result
 
 
-def save_history(history: dict[str, list[dict[str, object]]], path: Path = HISTORY_LOG_PATH) -> None:
-    document = {"history": history.get("history", [])}
+def save_history(history: dict[str, object], path: Path = HISTORY_LOG_PATH) -> None:
+    document = {
+        "history": history.get("history", []),
+        HISTORY_USED_SLUGS_KEY: history.get(HISTORY_USED_SLUGS_KEY, []),
+    }
     path.write_text(json.dumps(document, ensure_ascii=True, indent=2) + "\n", encoding="utf-8")
 
 
 def _all_used_slugs(
-    history: dict[str, list[dict[str, object]]],
+    history: dict[str, object],
 ) -> set[str]:
     used: set[str] = set()
     entries = history.get("history", [])
@@ -370,6 +448,12 @@ def _all_used_slugs(
             for slug in slugs:
                 if isinstance(slug, str):
                     used.add(slug)
+
+    archive = history.get(HISTORY_USED_SLUGS_KEY)
+    if isinstance(archive, list):
+        for slug in archive:
+            if isinstance(slug, str):
+                used.add(slug)
     return used
 
 
@@ -385,7 +469,7 @@ def _env_flag(name: str) -> bool:
     return normalized not in {"", "0", "false", "no"}
 
 
-def _append_history_entry(history: dict[str, list[dict[str, object]]], date_value: str, slugs: list[str]) -> None:
+def _append_history_entry(history: dict[str, object], date_value: str, slugs: list[str]) -> None:
     entries = history.setdefault("history", [])
     if not isinstance(entries, list):
         entries = history["history"] = []
@@ -399,8 +483,51 @@ def _append_history_entry(history: dict[str, list[dict[str, object]]], date_valu
     if overflow > 0:
         del entries[:overflow]
 
+    _mark_slugs_as_used(history, slugs)
 
-def select_articles(now: datetime, history: dict[str, list[dict[str, object]]]) -> list[dict[str, object]]:
+
+def _ensure_entry_slugs_tracked(history: dict[str, object]) -> None:
+    entries = history.get("history", [])
+    used_archive = history.setdefault(HISTORY_USED_SLUGS_KEY, [])
+    if not isinstance(used_archive, list):
+        used_archive = history[HISTORY_USED_SLUGS_KEY] = []
+
+    seen: set[str] = set()
+    for slug in used_archive:
+        if isinstance(slug, str):
+            seen.add(slug)
+
+    changed = False
+    if isinstance(entries, list):
+        for entry in entries:
+            if not isinstance(entry, dict):
+                continue
+            slugs = entry.get("slugs")
+            if not isinstance(slugs, list):
+                continue
+            for slug in slugs:
+                if isinstance(slug, str) and slug not in seen:
+                    used_archive.append(slug)
+                    seen.add(slug)
+                    changed = True
+
+    if changed:
+        history[HISTORY_USED_SLUGS_KEY] = used_archive
+
+
+def _mark_slugs_as_used(history: dict[str, object], slugs: list[str]) -> None:
+    used_archive = history.setdefault(HISTORY_USED_SLUGS_KEY, [])
+    if not isinstance(used_archive, list):
+        used_archive = history[HISTORY_USED_SLUGS_KEY] = []
+
+    seen = {slug for slug in used_archive if isinstance(slug, str)}
+    for slug in slugs:
+        if isinstance(slug, str) and slug not in seen:
+            used_archive.append(slug)
+            seen.add(slug)
+
+
+def select_articles(now: datetime, history: dict[str, object]) -> tuple[list[dict[str, object]], bool]:
     selections: list[dict[str, object]] = []
     ordinal = now.date().toordinal()
     today = now.date().isoformat()
@@ -427,7 +554,7 @@ def select_articles(now: datetime, history: dict[str, list[dict[str, object]]]) 
                     break
                 resolved.append(article)
             else:
-                return resolved
+                return resolved, True
 
     used_slugs = _all_used_slugs(history)
 
@@ -446,7 +573,7 @@ def select_articles(now: datetime, history: dict[str, list[dict[str, object]]]) 
         selections.append(selection)
         used_slugs.add(selection["slug"])
 
-    return selections
+    return selections, False
 
 def build_html(date_long: str, date_short: str, articles: list[dict[str, object]]) -> str:
     sections = []
@@ -588,8 +715,21 @@ def main() -> None:
     date_long = german_long_date(now)
     date_short = german_short_date(now)
     history = load_history()
-    articles = select_articles(now, history)
-    _append_history_entry(history, now.date().isoformat(), [article["slug"] for article in articles])
+    articles, reused_existing = select_articles(now, history)
+
+    slugs_today = [article["slug"] for article in articles]
+    if not reused_existing:
+        previously_used = _all_used_slugs(history)
+        duplicates = [slug for slug in slugs_today if slug in previously_used]
+        if duplicates:
+            joined = ", ".join(sorted(set(duplicates)))
+            raise RuntimeError(
+                "Auswahl enthaelt bereits verwendete Artikel und wurde daher abgebrochen: "
+                f"{joined}"
+            )
+
+    _append_history_entry(history, now.date().isoformat(), slugs_today)
+    _ensure_entry_slugs_tracked(history)
     save_history(history)
 
     html_content = build_html(date_long, date_short, articles)
