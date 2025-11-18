@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -376,6 +377,14 @@ def _article_by_slug(slug: str) -> dict[str, object] | None:
     return ARTICLE_LOOKUP.get(slug)
 
 
+def _env_flag(name: str) -> bool:
+    value = os.getenv(name)
+    if value is None:
+        return False
+    normalized = value.strip().lower()
+    return normalized not in {"", "0", "false", "no"}
+
+
 def _append_history_entry(history: dict[str, list[dict[str, object]]], date_value: str, slugs: list[str]) -> None:
     entries = history.setdefault("history", [])
     if not isinstance(entries, list):
@@ -404,7 +413,9 @@ def select_articles(now: datetime, history: dict[str, list[dict[str, object]]]) 
                 existing_entry = entry
                 break
 
-    if existing_entry is not None:
+    force_new_today = _env_flag("FORCE_NEW_SELECTION")
+
+    if existing_entry is not None and not force_new_today:
         slugs = existing_entry.get("slugs")
         if isinstance(slugs, list):
             resolved: list[dict[str, object]] = []
