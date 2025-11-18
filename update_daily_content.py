@@ -1,8 +1,14 @@
 from __future__ import annotations
 
+import json
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+BASE_PATH = Path(__file__).resolve().parent
+HISTORY_LOG_PATH = BASE_PATH / "history_log.json"
+HISTORY_RECENT_WINDOW = 30
+HISTORY_MAX_ENTRIES = 180
 
 MONTHS = {
     1: "Januar",
@@ -310,16 +316,87 @@ def german_long_date(dt: datetime) -> str:
 def german_short_date(dt: datetime) -> str:
     return f"{dt.day}.{dt.month:02d}.{str(dt.year)[-2:]}"
 
+def load_history(path: Path = HISTORY_LOG_PATH) -> dict[str, list[dict[str, object]]]:
+    if not path.exists():
+        return {"history": []}
 
-def select_articles(now: datetime) -> list[dict[str, object]]:
-    selections = []
+    try:
+        raw_data = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError, UnicodeDecodeError):
+        return {"history": []}
+
+    entries = raw_data.get("history")
+    if not isinstance(entries, list):
+        return {"history": []}
+
+    cleaned: list[dict[str, object]] = []
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        date_value = entry.get("date")
+        slugs_value = entry.get("slugs")
+        if isinstance(date_value, str) and isinstance(slugs_value, list):
+            valid_slugs = [slug for slug in slugs_value if isinstance(slug, str)]
+            cleaned.append({"date": date_value, "slugs": valid_slugs})
+    return {"history": cleaned}
+
+
+def save_history(history: dict[str, list[dict[str, object]]], path: Path = HISTORY_LOG_PATH) -> None:
+    document = {"history": history.get("history", [])}
+    path.write_text(json.dumps(document, ensure_ascii=True, indent=2) + "\n", encoding="utf-8")
+
+
+def _recent_slugs(history: dict[str, list[dict[str, object]]], limit: int) -> set[str]:
+    recent: set[str] = set()
+    entries = history.get("history", [])
+    if not isinstance(entries, list):
+        return recent
+
+    for entry in entries[-limit:]:
+        slugs = entry.get("slugs") if isinstance(entry, dict) else None
+        if isinstance(slugs, list):
+            for slug in slugs:
+                if isinstance(slug, str):
+                    recent.add(slug)
+    return recent
+
+
+def _append_history_entry(history: dict[str, list[dict[str, object]]], date_value: str, slugs: list[str]) -> None:
+    entries = history.setdefault("history", [])
+    if not isinstance(entries, list):
+        entries = history["history"] = []
+
+    if entries and isinstance(entries[-1], dict) and entries[-1].get("date") == date_value:
+        entries[-1] = {"date": date_value, "slugs": slugs}
+    else:
+        entries.append({"date": date_value, "slugs": slugs})
+
+    overflow = len(entries) - HISTORY_MAX_ENTRIES
+    if overflow > 0:
+        del entries[:overflow]
+
+
+def select_articles(now: datetime, history: dict[str, list[dict[str, object]]]) -> list[dict[str, object]]:
+    selections: list[dict[str, object]] = []
     ordinal = now.date().toordinal()
+    recent_slugs = _recent_slugs(history, HISTORY_RECENT_WINDOW)
+
     for position, category in enumerate(CATEGORY_ORDER):
         pool = ARTICLES[category]
-        index = (ordinal + position) % len(pool)
-        selections.append(pool[index])
-    return selections
+        start_index = (ordinal + position) % len(pool)
+        selection: dict[str, object] | None = None
+        for offset in range(len(pool)):
+            candidate = pool[(start_index + offset) % len(pool)]
+            if candidate["slug"] not in recent_slugs:
+                selection = candidate
+                break
+        if selection is None:
+            selection = pool[start_index]
 
+        selections.append(selection)
+        recent_slugs.add(selection["slug"])
+
+    return selections
 
 def build_html(date_long: str, date_short: str, articles: list[dict[str, object]]) -> str:
     sections = []
@@ -460,10 +537,13 @@ def main() -> None:
     now = datetime.now(ZoneInfo("Europe/Berlin"))
     date_long = german_long_date(now)
     date_short = german_short_date(now)
-    articles = select_articles(now)
+    history = load_history()
+    articles = select_articles(now, history)
+    _append_history_entry(history, now.date().isoformat(), [article["slug"] for article in articles])
+    save_history(history)
 
     html_content = build_html(date_long, date_short, articles)
-    base_path = Path(__file__).resolve().parent
+    base_path = BASE_PATH
 
     for filename in ("index.html", "tageschronik.html"):
         (base_path / filename).write_text(html_content, encoding="utf-8")

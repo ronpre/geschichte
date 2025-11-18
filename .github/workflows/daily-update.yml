@@ -30,4 +30,5 @@ jobs:
             index.html
             tageschronik.html
             dokumentation.pdf
+            history_log.json
           branch: ${{ github.ref_name }}
