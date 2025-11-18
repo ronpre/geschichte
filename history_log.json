@@ -1,6 +1,26 @@
 {
   "history": [
     {
+      "date": "2025-11-15",
+      "slugs": [
+        "politik-1998",
+        "wirtschaft-1944",
+        "zeitgeschichte-1986",
+        "gesellschaft-1991",
+        "antike-0312"
+      ]
+    },
+    {
+      "date": "2025-11-16",
+      "slugs": [
+        "politik-1975",
+        "wirtschaft-2001",
+        "zeitgeschichte-1989",
+        "gesellschaft-1971",
+        "antike-0594"
+      ]
+    },
+    {
       "date": "2025-11-17",
       "slugs": [
         "politik-1947",
@@ -13,11 +33,11 @@
     {
       "date": "2025-11-18",
       "slugs": [
-        "politik-1998",
-        "wirtschaft-1944",
-        "zeitgeschichte-1986",
-        "gesellschaft-1991",
-        "antike-0312"
+        "politik-1648",
+        "wirtschaft-1947",
+        "zeitgeschichte-1995",
+        "gesellschaft-2006",
+        "antike-1750"
       ]
     }
   ]
