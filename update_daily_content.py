@@ -7,7 +7,6 @@ from zoneinfo import ZoneInfo
 
 BASE_PATH = Path(__file__).resolve().parent
 HISTORY_LOG_PATH = BASE_PATH / "history_log.json"
-HISTORY_RECENT_WINDOW = 30
 HISTORY_MAX_ENTRIES = 180
 
 MONTHS = {
@@ -309,6 +308,14 @@ ARTICLES = {
 }
 
 
+ARTICLE_LOOKUP: dict[str, dict[str, object]] = {}
+for _articles in ARTICLES.values():
+    for _article in _articles:
+        slug = _article.get("slug")
+        if isinstance(slug, str) and slug not in ARTICLE_LOOKUP:
+            ARTICLE_LOOKUP[slug] = _article
+
+
 def german_long_date(dt: datetime) -> str:
     return f"{dt.day}. {MONTHS[dt.month]} {dt.year}"
 
@@ -346,19 +353,27 @@ def save_history(history: dict[str, list[dict[str, object]]], path: Path = HISTO
     path.write_text(json.dumps(document, ensure_ascii=True, indent=2) + "\n", encoding="utf-8")
 
 
-def _recent_slugs(history: dict[str, list[dict[str, object]]], limit: int) -> set[str]:
-    recent: set[str] = set()
+def _all_used_slugs(
+    history: dict[str, list[dict[str, object]]],
+) -> set[str]:
+    used: set[str] = set()
     entries = history.get("history", [])
     if not isinstance(entries, list):
-        return recent
+        return used
 
-    for entry in entries[-limit:]:
-        slugs = entry.get("slugs") if isinstance(entry, dict) else None
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        slugs = entry.get("slugs")
         if isinstance(slugs, list):
             for slug in slugs:
                 if isinstance(slug, str):
-                    recent.add(slug)
-    return recent
+                    used.add(slug)
+    return used
+
+
+def _article_by_slug(slug: str) -> dict[str, object] | None:
+    return ARTICLE_LOOKUP.get(slug)
 
 
 def _append_history_entry(history: dict[str, list[dict[str, object]]], date_value: str, slugs: list[str]) -> None:
@@ -379,7 +394,31 @@ def _append_history_entry(history: dict[str, list[dict[str, object]]], date_valu
 def select_articles(now: datetime, history: dict[str, list[dict[str, object]]]) -> list[dict[str, object]]:
     selections: list[dict[str, object]] = []
     ordinal = now.date().toordinal()
-    recent_slugs = _recent_slugs(history, HISTORY_RECENT_WINDOW)
+    today = now.date().isoformat()
+
+    existing_entry: dict[str, object] | None = None
+    entries = history.get("history", [])
+    if isinstance(entries, list):
+        for entry in reversed(entries):
+            if isinstance(entry, dict) and entry.get("date") == today:
+                existing_entry = entry
+                break
+
+    if existing_entry is not None:
+        slugs = existing_entry.get("slugs")
+        if isinstance(slugs, list):
+            resolved: list[dict[str, object]] = []
+            for slug in slugs:
+                if not isinstance(slug, str):
+                    break
+                article = _article_by_slug(slug)
+                if article is None:
+                    break
+                resolved.append(article)
+            else:
+                return resolved
+
+    used_slugs = _all_used_slugs(history)
 
     for position, category in enumerate(CATEGORY_ORDER):
         pool = ARTICLES[category]
@@ -387,14 +426,14 @@ def select_articles(now: datetime, history: dict[str, list[dict[str, object]]]) 
         selection: dict[str, object] | None = None
         for offset in range(len(pool)):
             candidate = pool[(start_index + offset) % len(pool)]
-            if candidate["slug"] not in recent_slugs:
+            if candidate["slug"] not in used_slugs:
                 selection = candidate
                 break
         if selection is None:
-            selection = pool[start_index]
+            raise RuntimeError(f"No unused articles left for category '{category}'.")
 
         selections.append(selection)
-        recent_slugs.add(selection["slug"])
+        used_slugs.add(selection["slug"])
 
     return selections
 
