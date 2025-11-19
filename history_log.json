@@ -43,11 +43,11 @@
     {
       "date": "2025-11-19",
       "slugs": [
-        "politik-1992",
-        "wirtschaft-1957",
-        "zeitgeschichte-1969",
-        "gesellschaft-2017",
-        "antike-0490"
+        "politik-1919",
+        "wirtschaft-1933",
+        "zeitgeschichte-1972",
+        "gesellschaft-1990",
+        "antike-0264"
       ]
     }
   ],
@@ -76,6 +76,11 @@
     "wirtschaft-1957",
     "zeitgeschichte-1969",
     "gesellschaft-2017",
-    "antike-0490"
+    "antike-0490",
+    "politik-1919",
+    "wirtschaft-1933",
+    "zeitgeschichte-1972",
+    "gesellschaft-1990",
+    "antike-0264"
   ]
 }
