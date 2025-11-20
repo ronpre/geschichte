@@ -49,6 +49,16 @@
         "gesellschaft-1990",
         "antike-0264"
       ]
+    },
+    {
+      "date": "2025-11-20",
+      "slugs": [
+        "politik-1955",
+        "wirtschaft-1973",
+        "zeitgeschichte-1984",
+        "gesellschaft-2001",
+        "antike-0027"
+      ]
     }
   ],
   "used_slugs": [
@@ -81,6 +91,11 @@
     "wirtschaft-1933",
     "zeitgeschichte-1972",
     "gesellschaft-1990",
-    "antike-0264"
+    "antike-0264",
+    "politik-1955",
+    "wirtschaft-1973",
+    "zeitgeschichte-1984",
+    "gesellschaft-2001",
+    "antike-0027"
   ]
 }
