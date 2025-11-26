@@ -59,6 +59,16 @@
         "gesellschaft-2001",
         "antike-0027"
       ]
+    },
+    {
+      "date": "2025-11-26",
+      "slugs": [
+        "politik-1962",
+        "wirtschaft-1985",
+        "zeitgeschichte-1961",
+        "gesellschaft-1948",
+        "antike-0449"
+      ]
     }
   ],
   "used_slugs": [
@@ -96,6 +106,11 @@
     "wirtschaft-1973",
     "zeitgeschichte-1984",
     "gesellschaft-2001",
-    "antike-0027"
+    "antike-0027",
+    "politik-1962",
+    "wirtschaft-1985",
+    "zeitgeschichte-1961",
+    "gesellschaft-1948",
+    "antike-0449"
   ]
 }

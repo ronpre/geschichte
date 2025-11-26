@@ -786,6 +786,43 @@ def _article_by_slug(slug: str) -> dict[str, object] | None:
     return ARTICLE_LOOKUP.get(slug)
 
 
+def _find_duplicate_history_slugs(history: dict[str, object]) -> dict[str, list[str]]:
+    duplicates: dict[str, set[str]] = {}
+    seen: dict[str, str] = {}
+    entries = history.get("history", [])
+    if isinstance(entries, list):
+        for entry in entries:
+            if not isinstance(entry, dict):
+                continue
+            date_value = entry.get("date")
+            slugs = entry.get("slugs")
+            if not isinstance(date_value, str) or not isinstance(slugs, list):
+                continue
+            for slug in slugs:
+                if not isinstance(slug, str):
+                    continue
+                previous_date = seen.get(slug)
+                if previous_date is None:
+                    seen[slug] = date_value
+                else:
+                    bucket = duplicates.setdefault(slug, set())
+                    bucket.add(previous_date)
+                    bucket.add(date_value)
+    return {slug: sorted(dates) for slug, dates in duplicates.items()}
+
+
+def _ensure_history_unique(history: dict[str, object]) -> None:
+    duplicates = _find_duplicate_history_slugs(history)
+    if duplicates:
+        formatted = "; ".join(
+            f"{slug}: {', '.join(dates)}" for slug, dates in sorted(duplicates.items())
+        )
+        raise RuntimeError(
+            "Historische Auswahl enthaelt bereits verwendete Artikel mehrfach: "
+            f"{formatted}. Bitte bereinigen, bevor eine neue Aktualisierung erfolgt."
+        )
+
+
 def _env_flag(name: str) -> bool:
     value = os.getenv(name)
     if value is None:
@@ -1040,6 +1077,7 @@ def main() -> None:
     date_long = german_long_date(now)
     date_short = german_short_date(now)
     history = load_history()
+    _ensure_history_unique(history)
     articles, reused_existing = select_articles(now, history)
 
     slugs_today = [article["slug"] for article in articles]
