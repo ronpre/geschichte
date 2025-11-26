@@ -866,8 +866,9 @@ def select_articles(now: datetime, history: dict[str, object]) -> tuple[list[dic
                 break
 
     force_new_today = _env_flag("FORCE_NEW_SELECTION")
+    allow_reuse_today = _env_flag("ALLOW_REUSE_TODAY")
 
-    if existing_entry is not None and not force_new_today:
+    if existing_entry is not None and allow_reuse_today and not force_new_today:
         slugs = existing_entry.get("slugs")
         if isinstance(slugs, list):
             resolved: list[dict[str, object]] = []
