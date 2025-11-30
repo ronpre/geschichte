@@ -998,20 +998,16 @@ def select_articles(now: datetime, history: dict[str, object]) -> tuple[list[dic
             else:
                 return resolved, True
 
-    # Neue Logik: Zuerst alle neuen Artikel, danach Rotation (alte Artikel wiederverwenden)
+    # Neue Logik: Es werden ausschließlich neue, noch nie gezeigte Artikel ausgewählt. Sind keine mehr vorhanden, gibt es einen Fehler.
     used_slugs = _all_used_slugs(history)
-    for position, category in enumerate(CATEGORY_ORDER):
+    for category in CATEGORY_ORDER:
         pool = ARTICLES[category]
         unused_articles = [article for article in pool if article["slug"] not in used_slugs]
-        if unused_articles:
-            # Solange neue Artikel vorhanden sind, diese nehmen
-            selection = unused_articles[0]
-            used_slugs.add(selection["slug"])
-        else:
-            # Wenn alle Artikel verbraucht, beginne von vorne (Rotation)
-            index = (now.date().toordinal() + position) % len(pool)
-            selection = pool[index]
+        if not unused_articles:
+            raise RuntimeError(f"Keine neuen Artikel mehr für Kategorie '{category}'. Alle wurden bereits verwendet.")
+        selection = unused_articles[0]
         selections.append(selection)
+        used_slugs.add(selection["slug"])
     return selections, False
 
 def build_html(date_long: str, date_short: str, articles: list[dict[str, object]]) -> str:
