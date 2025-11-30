@@ -776,11 +776,13 @@ for _articles in ARTICLES.values():
 def german_long_date(dt: datetime) -> str:
     return f"{dt.day}. {MONTHS[dt.month]} {dt.year}"
 
+    # ...existing code...
 
 def german_short_date(dt: datetime) -> str:
     return f"{dt.day}.{dt.month:02d}.{str(dt.year)[-2:]}"
 
 def load_history(path: Path = HISTORY_LOG_PATH) -> dict[str, object]:
+    # ...existing code...
     default: dict[str, object] = {"history": [], HISTORY_USED_SLUGS_KEY: []}
     if not path.exists():
         return default
@@ -789,6 +791,19 @@ def load_history(path: Path = HISTORY_LOG_PATH) -> dict[str, object]:
         raw_data = json.loads(path.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError, UnicodeDecodeError):
         return default
+        {
+            "slug": "gesellschaft-2018",
+            "title": "Gesellschaft: Fridays for Future 2018",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Ab 2018 demonstrierten weltweit Millionen junge Menschen für Klimaschutz und eine nachhaltige Zukunft.",
+                "<strong>Folgen:</strong> Die Bewegung beeinflusste politische Debatten, Klimagesetze und das gesellschaftliche Bewusstsein für Umweltfragen.",
+                "<strong>Was wir gelernt haben:</strong> Zivilgesellschaftlicher Druck kann politische Prozesse beschleunigen und Innovationen anstoßen.",
+                "<strong>Vertiefung:</strong> Fridays for Future ist ein Beispiel für die Wirksamkeit globaler Graswurzelbewegungen.",
+            ],
+            "source_label": "Fridays for Future",
+            "source_title": "Über die Bewegung",
+            "source_url": "https://fridaysforfuture.de/ueber-uns/",
+        },
 
     entries_raw = raw_data.get("history")
     cleaned_entries: list[dict[str, object]] = []
@@ -983,28 +998,20 @@ def select_articles(now: datetime, history: dict[str, object]) -> tuple[list[dic
             else:
                 return resolved, True
 
-    # Neue Logik: Für jede Kategorie wird täglich der nächste Artikel im Pool gewählt (Rotation),
-    # aber bereits gezeigte Artikel dürfen wiederverwendet werden.
-    previous_slugs = []
-    if isinstance(entries, list) and entries:
-        last_entry = entries[-1]
-        if isinstance(last_entry, dict):
-            slugs = last_entry.get("slugs")
-            if isinstance(slugs, list):
-                previous_slugs = slugs
-
+    # Neue Logik: Zuerst alle neuen Artikel, danach Rotation (alte Artikel wiederverwenden)
     used_slugs = _all_used_slugs(history)
     for position, category in enumerate(CATEGORY_ORDER):
         pool = ARTICLES[category]
         unused_articles = [article for article in pool if article["slug"] not in used_slugs]
-        if not unused_articles:
-            raise RuntimeError(f"Keine neuen Artikel mehr für Kategorie '{category}'. Alle wurden bereits verwendet.")
-        # Wähle deterministisch den nächsten neuen Artikel (z.B. nach Datum)
-        start_index = (ordinal + position) % len(unused_articles)
-        selection = unused_articles[start_index]
+        if unused_articles:
+            # Solange neue Artikel vorhanden sind, diese nehmen
+            selection = unused_articles[0]
+            used_slugs.add(selection["slug"])
+        else:
+            # Wenn alle Artikel verbraucht, beginne von vorne (Rotation)
+            index = (now.date().toordinal() + position) % len(pool)
+            selection = pool[index]
         selections.append(selection)
-        used_slugs.add(selection["slug"])
-
     return selections, False
 
 def build_html(date_long: str, date_short: str, articles: list[dict[str, object]]) -> str:
