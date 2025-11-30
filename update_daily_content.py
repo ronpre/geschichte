@@ -181,6 +181,19 @@ ARTICLES = {
             "source_title": "The Paris Agreement",
             "source_url": "https://unfccc.int/process-and-meetings/the-paris-agreement",
         },
+        {
+            "slug": "politik-2005",
+            "title": "Politik: Bundestagswahl und Kanzlerwechsel 2005",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 18. September 2005 fand die vorgezogene Bundestagswahl statt, die zum ersten Mal eine Kanzlerin, Angela Merkel, hervorbrachte.",
+                "<strong>Folgen:</strong> Die Große Koalition prägte die deutsche Politik, Reformen in Arbeitsmarkt und Sozialstaat wurden umgesetzt.",
+                "<strong>Was wir gelernt haben:</strong> Politische Wechsel können neue Impulse für Modernisierung und internationale Positionierung bringen.",
+                "<strong>Vertiefung:</strong> Die Ära Merkel beeinflusste Deutschlands Rolle in Europa und der Welt nachhaltig.",
+            ],
+            "source_label": "Bundeszentrale für politische Bildung",
+            "source_title": "Bundestagswahl 2005",
+            "source_url": "https://www.bpb.de/kurz-knapp/hintergrund-aktuell/202005/bundestagswahl-2005/",
+        },
     ],
     "wirtschaft": [
         {
@@ -326,6 +339,19 @@ ARTICLES = {
             "source_title": "About AIIB",
             "source_url": "https://www.aiib.org/en/about-aiib/index.html",
         },
+        {
+            "slug": "wirtschaft-2020",
+            "title": "Wirtschaft: Corona-Krise und Wirtschaft 2020",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Ab März 2020 führte die COVID-19-Pandemie zu einem weltweiten Wirtschaftseinbruch.",
+                "<strong>Folgen:</strong> Kurzarbeit, staatliche Hilfspakete und Digitalisierung prägten die Reaktion auf die Krise.",
+                "<strong>Was wir gelernt haben:</strong> Resiliente Wirtschaftssysteme brauchen flexible Instrumente und internationale Zusammenarbeit.",
+                "<strong>Vertiefung:</strong> Die Pandemie beschleunigte Strukturwandel und neue Arbeitsformen.",
+            ],
+            "source_label": "ifo Institut",
+            "source_title": "Corona-Krise und Wirtschaft",
+            "source_url": "https://www.ifo.de/thema/corona",
+        },
     ],
     "zeitgeschichte": [
         {
@@ -470,6 +496,19 @@ ARTICLES = {
             "source_label": "World Health Organization",
             "source_title": "Ebola virus disease: one year into the outbreak",
             "source_url": "https://www.who.int/csr/disease/ebola/one-year-report/introduction/en/",
+        },
+        {
+            "slug": "zeitgeschichte-2015",
+            "title": "Zeitgeschichte: Flüchtlingskrise 2015",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> 2015 erreichten über eine Million Geflüchtete Europa, vor allem Deutschland, ausgelöst durch Kriege und Krisen im Nahen Osten.",
+                "<strong>Folgen:</strong> Gesellschaftliche Debatten, Integrationsmaßnahmen und politische Umbrüche prägten die Folgejahre.",
+                "<strong>Was wir gelernt haben:</strong> Migration stellt Gesellschaften vor Herausforderungen, bietet aber auch Chancen für Erneuerung.",
+                "<strong>Vertiefung:</strong> Die Flüchtlingskrise beeinflusst bis heute Politik, Recht und gesellschaftlichen Zusammenhalt.",
+            ],
+            "source_label": "Bundeszentrale für politische Bildung",
+            "source_title": "Flüchtlingskrise 2015",
+            "source_url": "https://www.bpb.de/themen/migration-integration/dossier-migration/216790/fluechtlingskrise-2015/",
         },
     ],
     "gesellschaft": [
@@ -761,6 +800,19 @@ ARTICLES = {
             "source_title": "Augustus",
             "source_url": "https://www.britannica.com/biography/Augustus",
         },
+        {
+            "slug": "antike-0051",
+            "title": "Antike: Schlacht von Actium 31 v. Chr.",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 2. September 31 v. Chr. besiegte Octavian die Flotte von Marcus Antonius und Kleopatra bei Actium.",
+                "<strong>Folgen:</strong> Der Sieg leitete das Ende der römischen Republik und den Beginn des Prinzipats ein.",
+                "<strong>Was wir gelernt haben:</strong> Seeherrschaft und strategische Allianzen können den Lauf der Geschichte entscheiden.",
+                "<strong>Vertiefung:</strong> Die Schlacht von Actium ist ein Wendepunkt der antiken Weltgeschichte.",
+            ],
+            "source_label": "Encyclopaedia Britannica",
+            "source_title": "Battle of Actium",
+            "source_url": "https://www.britannica.com/event/Battle-of-Actium",
+        },
     ],
 }
 
@@ -823,6 +875,8 @@ def load_history(path: Path = HISTORY_LOG_PATH) -> dict[str, object]:
         for slug in used_slugs_raw:
             if isinstance(slug, str) and slug not in used_slugs:
                 used_slugs.append(slug)
+
+   
 
     result: dict[str, object] = {"history": cleaned_entries, HISTORY_USED_SLUGS_KEY: used_slugs}
     _ensure_entry_slugs_tracked(result)
