@@ -918,35 +918,27 @@ def select_articles(now: datetime, history: dict[str, object]) -> tuple[list[dic
             else:
                 return resolved, True
 
-    # New logic: Always include previously shown articles, reusing them as needed.
-    # For each category, try to reuse the most recent article from history, otherwise pick one from the pool.
-    previous_slugs = set()
+    # Neue Logik: Für jede Kategorie wird täglich der nächste Artikel im Pool gewählt (Rotation),
+    # aber bereits gezeigte Artikel dürfen wiederverwendet werden.
+    previous_slugs = []
     if isinstance(entries, list) and entries:
-        # Use the most recent entry's slugs for reuse
         last_entry = entries[-1]
         if isinstance(last_entry, dict):
             slugs = last_entry.get("slugs")
             if isinstance(slugs, list):
-                previous_slugs = set(slugs)
+                previous_slugs = slugs
 
+    used_slugs = _all_used_slugs(history)
     for position, category in enumerate(CATEGORY_ORDER):
         pool = ARTICLES[category]
-        # Try to reuse the previous article for this category
-        reused = None
-        for slug in previous_slugs:
-            for article in pool:
-                if article["slug"] == slug:
-                    reused = article
-                    break
-            if reused:
-                break
-        if reused:
-            selections.append(reused)
-        else:
-            # Fallback: rotate through pool as before
-            start_index = (ordinal + position) % len(pool)
-            selection = pool[start_index]
-            selections.append(selection)
+        unused_articles = [article for article in pool if article["slug"] not in used_slugs]
+        if not unused_articles:
+            raise RuntimeError(f"Keine neuen Artikel mehr für Kategorie '{category}'. Alle wurden bereits verwendet.")
+        # Wähle deterministisch den nächsten neuen Artikel (z.B. nach Datum)
+        start_index = (ordinal + position) % len(unused_articles)
+        selection = unused_articles[start_index]
+        selections.append(selection)
+        used_slugs.add(selection["slug"])
 
     return selections, False
 
