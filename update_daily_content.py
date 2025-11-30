@@ -52,6 +52,19 @@ ARTICLES = {
             "source_url": "https://www.britannica.com/event/Peace-of-Westphalia",
         },
         {
+            "slug": "politik-1989",
+            "title": "Politik: Mauerfall und deutsche Einheit 1989/90",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 9. November 1989 fiel die Berliner Mauer, was den Weg zur deutschen Einheit und zum Ende des Kalten Krieges ebnete.",
+                "<strong>Folgen:</strong> Die Wiedervereinigung Deutschlands, der Abzug sowjetischer Truppen und die Integration Ostdeutschlands in die EU und NATO folgten.",
+                "<strong>Was wir gelernt haben:</strong> Friedliche Revolutionen koennen durch Dialog, internationale Garantien und wirtschaftliche Hilfen stabilisiert werden.",
+                "<strong>Vertiefung:</strong> Die Transformation Ostdeutschlands und die europaeische Integration sind bis heute Gegenstand politischer und gesellschaftlicher Debatten.",
+            ],
+            "source_label": "Bundeszentrale für politische Bildung",
+            "source_title": "Der Weg zur deutschen Einheit",
+            "source_url": "https://www.bpb.de/geschichte/deutsche-geschichte/deutsche-einheit/",
+        },
+        {
             "slug": "politik-1947",
             "title": "Politik: Unabhaengigkeit Indiens 1947",
             "paragraphs": [
@@ -182,6 +195,19 @@ ARTICLES = {
             "source_label": "International Monetary Fund",
             "source_title": "The Enduring Legacy of Bretton Woods",
             "source_url": "https://www.imf.org/external/about/histcoop.htm",
+        },
+        {
+            "slug": "wirtschaft-2008",
+            "title": "Wirtschaft: Globale Finanzkrise 2008",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Im Herbst 2008 loeste der Kollaps von Lehman Brothers eine weltweite Finanzkrise aus, die Banken, Maerkte und Volkswirtschaften erschuetterte.",
+                "<strong>Folgen:</strong> Staaten retteten Banken, fuehrten Konjunkturpakete ein und verschuldeten sich stark, waehrend Arbeitslosigkeit und soziale Spannungen zunahmen.",
+                "<strong>Was wir gelernt haben:</strong> Finanzsysteme benoetigen strenge Regulierung, Transparenz und internationale Zusammenarbeit, um systemische Risiken zu begrenzen.",
+                "<strong>Vertiefung:</strong> Die Krise fuehrte zu neuen Regeln wie Basel III, zur Staerkung von Aufsichtsbehoerden und zu Debatten ueber soziale Gerechtigkeit.",
+            ],
+            "source_label": "Deutsche Bundesbank",
+            "source_title": "Die globale Finanzkrise 2008",
+            "source_url": "https://www.bundesbank.de/de/aufgaben/themen/die-globale-finanzkrise-2008-667962",
         },
         {
             "slug": "wirtschaft-1947",
@@ -316,6 +342,19 @@ ARTICLES = {
             "source_url": "https://www.britannica.com/event/fall-of-the-Berlin-Wall",
         },
         {
+            "slug": "zeitgeschichte-2001",
+            "title": "Zeitgeschichte: 11. September 2001",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Am 11. September 2001 veruebten Terroristen Anschlaege auf das World Trade Center und das Pentagon, was weltweite Schockwellen ausloeste.",
+                "<strong>Folgen:</strong> Die USA und ihre Verbuendeten begannen den Krieg gegen den Terror, fuehrten neue Sicherheitsgesetze ein und griffen in Afghanistan und Irak militärisch ein.",
+                "<strong>Was wir gelernt haben:</strong> Globale Sicherheit erfordert internationale Kooperation, Geheimdienstarbeit und gesellschaftliche Resilienz gegen Extremismus.",
+                "<strong>Vertiefung:</strong> Die Anschlaege veraenderten langfristig Aussenpolitik, Ueberwachung und das Verhaeltnis von Freiheit und Sicherheit.",
+            ],
+            "source_label": "Encyclopaedia Britannica",
+            "source_title": "September 11 attacks",
+            "source_url": "https://www.britannica.com/event/September-11-attacks",
+        },
+        {
             "slug": "zeitgeschichte-1986",
             "title": "Zeitgeschichte: Reaktorkatastrophe von Tschernobyl 1986",
             "paragraphs": [
@@ -448,6 +487,19 @@ ARTICLES = {
             "source_url": "https://www.archives.gov/milestone-documents/civil-rights-act",
         },
         {
+            "slug": "gesellschaft-2020",
+            "title": "Gesellschaft: COVID-19-Pandemie 2020",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Ab Maerz 2020 breitete sich das Coronavirus weltweit aus, fuehrte zu Lockdowns, Schulschliessungen und einer globalen Gesundheitskrise.",
+                "<strong>Folgen:</strong> Wirtschaftliche Einbrueche, Digitalisierungsschub, neue Formen der Arbeit und gesellschaftliche Polarisierung praegten die Zeit.",
+                "<strong>Was wir gelernt haben:</strong> Krisenmanagement erfordert transparente Kommunikation, wissenschaftliche Beratung und internationale Solidaritaet.",
+                "<strong>Vertiefung:</strong> Die Pandemie beschleunigte Innovationen in Medizin, Bildung und Verwaltung und wirkte als Katalysator fuer gesellschaftlichen Wandel.",
+            ],
+            "source_label": "Robert Koch-Institut",
+            "source_title": "COVID-19-Pandemie",
+            "source_url": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/nCoV.html",
+        },
+        {
             "slug": "gesellschaft-1971",
             "title": "Gesellschaft: Frauenstimmrecht Schweiz 1971",
             "paragraphs": [
@@ -578,6 +630,19 @@ ARTICLES = {
             "source_label": "Encyclopaedia Britannica",
             "source_title": "Code of Hammurabi",
             "source_url": "https://www.britannica.com/topic/Code-of-Hammurabi",
+        },
+        {
+            "slug": "antike-0049",
+            "title": "Antike: Caesars Ueberschreitung des Rubikon 49 v. Chr.",
+            "paragraphs": [
+                "<strong>Ereignis:</strong> Im Januar 49 v. Chr. ueberschritt Gaius Julius Caesar mit seinen Legionen den Rubikon und loeste damit den roemischen Buergerkrieg aus.",
+                "<strong>Folgen:</strong> Die Republik zerbrach, Caesar wurde Diktator auf Lebenszeit und bereitete den Uebergang zum Prinzipat vor.",
+                "<strong>Was wir gelernt haben:</strong> Machtkonzentration und Missachtung republikanischer Normen koennen politische Systeme destabilisieren.",
+                "<strong>Vertiefung:</strong> Der Rubikon-Entschluss ist bis heute ein Symbol fuer unumkehrbare Entscheidungen in der Politik.",
+            ],
+            "source_label": "Encyclopaedia Britannica",
+            "source_title": "Julius Caesar crosses the Rubicon",
+            "source_url": "https://www.britannica.com/event/Julius-Caesar-crosses-the-Rubicon",
         },
         {
             "slug": "antike-0300",
