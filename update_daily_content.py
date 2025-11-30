@@ -918,22 +918,35 @@ def select_articles(now: datetime, history: dict[str, object]) -> tuple[list[dic
             else:
                 return resolved, True
 
-    used_slugs = _all_used_slugs(history)
+    # New logic: Always include previously shown articles, reusing them as needed.
+    # For each category, try to reuse the most recent article from history, otherwise pick one from the pool.
+    previous_slugs = set()
+    if isinstance(entries, list) and entries:
+        # Use the most recent entry's slugs for reuse
+        last_entry = entries[-1]
+        if isinstance(last_entry, dict):
+            slugs = last_entry.get("slugs")
+            if isinstance(slugs, list):
+                previous_slugs = set(slugs)
 
     for position, category in enumerate(CATEGORY_ORDER):
         pool = ARTICLES[category]
-        start_index = (ordinal + position) % len(pool)
-        selection: dict[str, object] | None = None
-        for offset in range(len(pool)):
-            candidate = pool[(start_index + offset) % len(pool)]
-            if candidate["slug"] not in used_slugs:
-                selection = candidate
+        # Try to reuse the previous article for this category
+        reused = None
+        for slug in previous_slugs:
+            for article in pool:
+                if article["slug"] == slug:
+                    reused = article
+                    break
+            if reused:
                 break
-        if selection is None:
-            raise RuntimeError(f"No unused articles left for category '{category}'.")
-
-        selections.append(selection)
-        used_slugs.add(selection["slug"])
+        if reused:
+            selections.append(reused)
+        else:
+            # Fallback: rotate through pool as before
+            start_index = (ordinal + position) % len(pool)
+            selection = pool[start_index]
+            selections.append(selection)
 
     return selections, False
 
@@ -1078,19 +1091,9 @@ def main() -> None:
     date_short = german_short_date(now)
     history = load_history()
     _ensure_history_unique(history)
-    articles, reused_existing = select_articles(now, history)
+    articles, _ = select_articles(now, history)
 
     slugs_today = [article["slug"] for article in articles]
-    if not reused_existing:
-        previously_used = _all_used_slugs(history)
-        duplicates = [slug for slug in slugs_today if slug in previously_used]
-        if duplicates:
-            joined = ", ".join(sorted(set(duplicates)))
-            raise RuntimeError(
-                "Auswahl enthaelt bereits verwendete Artikel und wurde daher abgebrochen: "
-                f"{joined}"
-            )
-
     _append_history_entry(history, now.date().isoformat(), slugs_today)
     _ensure_entry_slugs_tracked(history)
     save_history(history)
