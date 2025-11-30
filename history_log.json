@@ -69,6 +69,16 @@
         "gesellschaft-1948",
         "antike-0449"
       ]
+    },
+    {
+      "date": "2025-11-30",
+      "slugs": [
+        "politik-1987",
+        "wirtschaft-1994",
+        "zeitgeschichte-2004",
+        "gesellschaft-2015",
+        "antike-0431"
+      ]
     }
   ],
   "used_slugs": [
@@ -111,6 +121,11 @@
     "wirtschaft-1985",
     "zeitgeschichte-1961",
     "gesellschaft-1948",
-    "antike-0449"
+    "antike-0449",
+    "politik-1987",
+    "wirtschaft-1994",
+    "zeitgeschichte-2004",
+    "gesellschaft-2015",
+    "antike-0431"
   ]
 }
