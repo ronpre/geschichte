@@ -1052,14 +1052,26 @@ def select_articles(now: datetime, history: dict[str, object]) -> tuple[list[dic
             else:
                 return resolved, True
 
-    # Neue Logik: Es werden ausschließlich neue, noch nie gezeigte Artikel ausgewählt. Sind keine mehr vorhanden, gibt es einen Fehler.
+    # Neue Logik: Rotation, aber keine Dopplung an einem Tag. Immer der älteste noch nicht verwendete Artikel, dann wieder von vorne.
     used_slugs = _all_used_slugs(history)
     for category in CATEGORY_ORDER:
         pool = ARTICLES[category]
         unused_articles = [article for article in pool if article["slug"] not in used_slugs]
-        if not unused_articles:
-            raise RuntimeError(f"Keine neuen Artikel mehr für Kategorie '{category}'. Alle wurden bereits verwendet.")
-        selection = unused_articles[0]
+        if unused_articles:
+            selection = unused_articles[0]
+        else:
+            # Rotation: Wenn alle verwendet, beginne von vorne (aber keine Dopplung an einem Tag)
+            # Finde Slugs, die heute noch nicht verwendet wurden
+            today_slugs = set()
+            for entry in history.get("history", []):
+                if entry.get("date") == now.date().isoformat():
+                    today_slugs.update(entry.get("slugs", []))
+            available = [article for article in pool if article["slug"] not in today_slugs]
+            if not available:
+                # Fallback: Wenn alle heute schon verwendet, nimm den ersten
+                selection = pool[0]
+            else:
+                selection = available[0]
         selections.append(selection)
         used_slugs.add(selection["slug"])
     return selections, False

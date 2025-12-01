@@ -79,6 +79,16 @@
         "gesellschaft-2015",
         "antike-0431"
       ]
+    },
+    {
+      "date": "2025-12-01",
+      "slugs": [
+        "politik-1989",
+        "wirtschaft-2008",
+        "zeitgeschichte-2001",
+        "gesellschaft-2020",
+        "antike-0049"
+      ]
     }
   ],
   "used_slugs": [
@@ -126,6 +136,11 @@
     "wirtschaft-1994",
     "zeitgeschichte-2004",
     "gesellschaft-2015",
-    "antike-0431"
+    "antike-0431",
+    "politik-1989",
+    "wirtschaft-2008",
+    "zeitgeschichte-2001",
+    "gesellschaft-2020",
+    "antike-0049"
   ]
 }
